@@ -1,0 +1,53 @@
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\Senior Project.exe.config
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\Senior Project.exe
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\Senior Project.pdb
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.csprojAssemblyReference.cache
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.Properties.Resources.resources
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.csproj.GenerateResource.cache
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.csproj.CoreCompileInputs.cache
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.exe
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.pdb
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.frmMain.resources
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.frmMainBody.resources
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.dll
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.Wpf.dll
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.xml
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.Wpf.xml
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.csproj.CopyComplete
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.frmOutput.resources
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\UserControl1.g.cs
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project_MarkupCompile.cache
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project_MarkupCompile.lref
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\Senior Project.exe.config
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\Senior Project.exe
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\Senior Project.pdb
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\Ab3d.DXEngine.dll
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.dll
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.Wpf.dll
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\SharpDX.Direct3D11.dll
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\SharpDX.dll
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\SharpDX.DXGI.dll
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\SharpDX.Mathematics.dll
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\Ab3d.DXEngine.xml
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.xml
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.Wpf.xml
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\SharpDX.pdb
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\SharpDX.Direct3D11.pdb
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\SharpDX.Direct3D11.xml
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\SharpDX.DXGI.pdb
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\SharpDX.DXGI.xml
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\SharpDX.Mathematics.pdb
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\bin\Debug\SharpDX.Mathematics.xml
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.frmMain.resources
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.frmMainBody.resources
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.frmOutput.resources
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.Properties.Resources.resources
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.csproj.GenerateResource.cache
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.csproj.CoreCompileInputs.cache
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.csproj.CopyComplete
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.exe
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.pdb
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project_MarkupCompile.cache
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\UserControl1.baml
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\UserControl1.g.cs
+C:\Users\rnmos\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.g.resources
