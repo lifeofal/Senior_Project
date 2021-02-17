@@ -1,0 +1,20 @@
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\Senior Project.exe.config
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\Senior Project.exe
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\Senior Project.pdb
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.csprojAssemblyReference.cache
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.Properties.Resources.resources
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.csproj.GenerateResource.cache
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.csproj.CoreCompileInputs.cache
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.exe
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.pdb
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.frmMain.resources
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.frmMainBody.resources
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.dll
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.Wpf.dll
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.xml
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\bin\Debug\HelixToolkit.Wpf.xml
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project.csproj.CopyComplete
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior_Project.frmOutput.resources
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\UserControl1.g.cs
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project_MarkupCompile.cache
+C:\Users\Johnathon\source\repos\Senior Project\Senior Project\obj\Debug\Senior Project_MarkupCompile.lref
