@@ -467,7 +467,8 @@ namespace _3DModel
                 //await file.WriteLineAsync("Triangle Index: " + triangleIndex[i]);
                 //await file.WriteLineAsync("Texture Coordinate: " + textureCoordinates[i].X + " " + textureCoordinates[i].Y);
                 await file.WriteLineAsync("Normal Vector: " + tempVec.X + " " + tempVec.Y + " " + tempVec.Z);
-            }      
+            }   
+            file.Close();
         }
     }
 }
