@@ -73,6 +73,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SettingObject.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
