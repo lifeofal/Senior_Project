@@ -36,27 +36,30 @@
             // 
             this.txtGCode.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtGCode.Location = new System.Drawing.Point(0, 0);
+            this.txtGCode.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txtGCode.Multiline = true;
             this.txtGCode.Name = "txtGCode";
-            this.txtGCode.Size = new System.Drawing.Size(808, 437);
+            this.txtGCode.Size = new System.Drawing.Size(2155, 1037);
             this.txtGCode.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(386, 464);
+            this.button1.Location = new System.Drawing.Point(1029, 1106);
+            this.button1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(200, 55);
             this.button1.TabIndex = 1;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // frmOutput
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 499);
+            this.ClientSize = new System.Drawing.Size(2155, 1190);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtGCode);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "frmOutput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmOutput";

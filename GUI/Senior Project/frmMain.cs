@@ -45,7 +45,7 @@ namespace Senior_Project
         public void createTabbedPages()
         {
             int tabCount = tabController.TabCount;
-            tabController.TabPages.Add("New : " + tabCount);
+            tabController.TabPages.Add("New : untitled");
             TabPage page = tabController.TabPages[tabCount];
 
             Panel centerPanel = new Panel();
@@ -60,6 +60,11 @@ namespace Senior_Project
         public void removeCurrentPage()
         {
             tabController.TabPages.RemoveAt(tabController.SelectedIndex);
+
+            if (tabController.TabCount == 0)
+            {
+                createTabbedPages();
+            }
         }
 
         public void renameCurrentTab(String name)

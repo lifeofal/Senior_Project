@@ -36,6 +36,7 @@
             this.btnResetSTL = new System.Windows.Forms.Button();
             this.btnLoadSTL = new System.Windows.Forms.Button();
             this.pan3DModelArea = new System.Windows.Forms.Panel();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.userControl1 = new System.Windows.Forms.UserControl();
             this.panSideBar = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -116,7 +117,7 @@
             this.panModifier.Dock = System.Windows.Forms.DockStyle.Top;
             this.panModifier.Location = new System.Drawing.Point(0, 0);
             this.panModifier.Name = "panModifier";
-            this.panModifier.Size = new System.Drawing.Size(1182, 34);
+            this.panModifier.Size = new System.Drawing.Size(1280, 34);
             this.panModifier.TabIndex = 1;
             // 
             // panel1
@@ -180,12 +181,24 @@
             // pan3DModelArea
             // 
             this.pan3DModelArea.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pan3DModelArea.Controls.Add(this.elementHost1);
             this.pan3DModelArea.Controls.Add(this.userControl1);
             this.pan3DModelArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan3DModelArea.Location = new System.Drawing.Point(0, 34);
             this.pan3DModelArea.Name = "pan3DModelArea";
-            this.pan3DModelArea.Size = new System.Drawing.Size(859, 618);
+            this.pan3DModelArea.Size = new System.Drawing.Size(957, 686);
             this.pan3DModelArea.TabIndex = 3;
+            // 
+            // elementHost1
+            // 
+            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elementHost1.Location = new System.Drawing.Point(0, 0);
+            this.elementHost1.Margin = new System.Windows.Forms.Padding(1);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(957, 686);
+            this.elementHost1.TabIndex = 2;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = null;
             // 
             // userControl1
             // 
@@ -202,9 +215,9 @@
             this.panSideBar.Controls.Add(this.groupBox2);
             this.panSideBar.Controls.Add(this.groupBox1);
             this.panSideBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panSideBar.Location = new System.Drawing.Point(859, 34);
+            this.panSideBar.Location = new System.Drawing.Point(957, 34);
             this.panSideBar.Name = "panSideBar";
-            this.panSideBar.Size = new System.Drawing.Size(323, 618);
+            this.panSideBar.Size = new System.Drawing.Size(323, 686);
             this.panSideBar.TabIndex = 4;
             // 
             // tableLayoutPanel4
@@ -248,12 +261,12 @@
             // 
             this.ddPrintSettings.FormattingEnabled = true;
             this.ddPrintSettings.Items.AddRange(new object[] {
-            "Test"});
+            "- Default -"});
             this.ddPrintSettings.Location = new System.Drawing.Point(104, 3);
             this.ddPrintSettings.Name = "ddPrintSettings";
             this.ddPrintSettings.Size = new System.Drawing.Size(163, 21);
             this.ddPrintSettings.TabIndex = 1;
-            this.ddPrintSettings.Text = "ddPrintGettings";
+            this.ddPrintSettings.Text = "- Default -";
             // 
             // btnPrintSettings
             // 
@@ -281,23 +294,23 @@
             // 
             this.ddFilament.FormattingEnabled = true;
             this.ddFilament.Items.AddRange(new object[] {
-            "test"});
+            "- Default -"});
             this.ddFilament.Location = new System.Drawing.Point(104, 28);
             this.ddFilament.Name = "ddFilament";
             this.ddFilament.Size = new System.Drawing.Size(163, 21);
             this.ddFilament.TabIndex = 1;
-            this.ddFilament.Text = "ddFilament";
+            this.ddFilament.Text = "- Default - ";
             // 
             // ddPrinter
             // 
             this.ddPrinter.FormattingEnabled = true;
             this.ddPrinter.Items.AddRange(new object[] {
-            "test"});
+            "- Default -"});
             this.ddPrinter.Location = new System.Drawing.Point(104, 53);
             this.ddPrinter.Name = "ddPrinter";
             this.ddPrinter.Size = new System.Drawing.Size(163, 21);
             this.ddPrinter.TabIndex = 1;
-            this.ddPrinter.Text = "ddPrinter";
+            this.ddPrinter.Text = "- Default -";
             // 
             // btnFilamentSettings
             // 
@@ -433,7 +446,7 @@
             this.txtLayer.Name = "txtLayer";
             this.txtLayer.Size = new System.Drawing.Size(100, 20);
             this.txtLayer.TabIndex = 9;
-            this.txtLayer.Text = "txtLayer";
+            this.txtLayer.Text = "0";
             // 
             // label12
             // 
@@ -453,7 +466,6 @@
             this.cbExternalPerims.Name = "cbExternalPerims";
             this.cbExternalPerims.Size = new System.Drawing.Size(123, 19);
             this.cbExternalPerims.TabIndex = 1;
-            this.cbExternalPerims.Text = "cbExternalPerims";
             this.cbExternalPerims.UseVisualStyleBackColor = true;
             // 
             // label13
@@ -507,7 +519,6 @@
             this.cbSpiral.Name = "cbSpiral";
             this.cbSpiral.Size = new System.Drawing.Size(123, 21);
             this.cbSpiral.TabIndex = 6;
-            this.cbSpiral.Text = "cbSpiral";
             this.cbSpiral.UseVisualStyleBackColor = true;
             // 
             // panel3
@@ -536,7 +547,7 @@
             this.txtFirstLayer.Name = "txtFirstLayer";
             this.txtFirstLayer.Size = new System.Drawing.Size(100, 20);
             this.txtFirstLayer.TabIndex = 8;
-            this.txtFirstLayer.Text = "txtFirstLayer";
+            this.txtFirstLayer.Text = "0";
             // 
             // groupBox2
             // 
@@ -582,12 +593,14 @@
             this.ddTopInfill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ddTopInfill.FormattingEnabled = true;
             this.ddTopInfill.Items.AddRange(new object[] {
-            "test"});
+            "Rectilinear",
+            "Concentric",
+            "Hilbert Curve"});
             this.ddTopInfill.Location = new System.Drawing.Point(159, 148);
             this.ddTopInfill.Name = "ddTopInfill";
             this.ddTopInfill.Size = new System.Drawing.Size(129, 21);
             this.ddTopInfill.TabIndex = 1;
-            this.ddTopInfill.Text = "ddTopInfill";
+            this.ddTopInfill.Text = "Rectilinear";
             // 
             // cbInitalBeforePerim
             // 
@@ -597,7 +610,6 @@
             this.cbInitalBeforePerim.Name = "cbInitalBeforePerim";
             this.cbInitalBeforePerim.Size = new System.Drawing.Size(129, 23);
             this.cbInitalBeforePerim.TabIndex = 2;
-            this.cbInitalBeforePerim.Text = "cbInitalBeforePerim";
             this.cbInitalBeforePerim.UseVisualStyleBackColor = true;
             // 
             // label11
@@ -630,7 +642,6 @@
             this.cbGaps.Name = "cbGaps";
             this.cbGaps.Size = new System.Drawing.Size(129, 23);
             this.cbGaps.TabIndex = 2;
-            this.cbGaps.Text = "cbGaps";
             this.cbGaps.UseVisualStyleBackColor = true;
             // 
             // ddFillPattern
@@ -638,12 +649,16 @@
             this.ddFillPattern.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ddFillPattern.FormattingEnabled = true;
             this.ddFillPattern.Items.AddRange(new object[] {
-            "test"});
+            "Rectinliear",
+            "Aligned Rectilinear",
+            "Grid",
+            "Cubic",
+            "Concentric"});
             this.ddFillPattern.Location = new System.Drawing.Point(159, 90);
             this.ddFillPattern.Name = "ddFillPattern";
             this.ddFillPattern.Size = new System.Drawing.Size(129, 21);
             this.ddFillPattern.TabIndex = 1;
-            this.ddFillPattern.Text = "ddFillPattern";
+            this.ddFillPattern.Text = "Rectilinear";
             // 
             // label10
             // 
@@ -661,12 +676,14 @@
             this.ddBottomInfill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ddBottomInfill.FormattingEnabled = true;
             this.ddBottomInfill.Items.AddRange(new object[] {
-            "test"});
+            "Rectinliear",
+            "Concentric",
+            "Hilbert Curve"});
             this.ddBottomInfill.Location = new System.Drawing.Point(159, 3);
             this.ddBottomInfill.Name = "ddBottomInfill";
             this.ddBottomInfill.Size = new System.Drawing.Size(129, 21);
             this.ddBottomInfill.TabIndex = 1;
-            this.ddBottomInfill.Text = "ddBottomInfill";
+            this.ddBottomInfill.Text = "Rectilinear";
             // 
             // label7
             // 
@@ -684,12 +701,17 @@
             this.ddFillDens.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ddFillDens.FormattingEnabled = true;
             this.ddFillDens.Items.AddRange(new object[] {
-            "test"});
+            "0%",
+            "20%",
+            "40%",
+            "60%",
+            "80%",
+            "100%"});
             this.ddFillDens.Location = new System.Drawing.Point(159, 32);
             this.ddFillDens.Name = "ddFillDens";
             this.ddFillDens.Size = new System.Drawing.Size(129, 21);
             this.ddFillDens.TabIndex = 1;
-            this.ddFillDens.Text = "ddFillDens";
+            this.ddFillDens.Text = "0%";
             // 
             // label9
             // 
@@ -754,7 +776,7 @@
             this.panel6.Controls.Add(this.txtSizeComp);
             this.panel6.Location = new System.Drawing.Point(159, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(129, 18);
+            this.panel6.Size = new System.Drawing.Size(128, 18);
             this.panel6.TabIndex = 1;
             // 
             // label5
@@ -774,13 +796,14 @@
             this.txtSizeComp.Name = "txtSizeComp";
             this.txtSizeComp.Size = new System.Drawing.Size(90, 20);
             this.txtSizeComp.TabIndex = 1;
-            this.txtSizeComp.Text = "txtSizeComp";
+            this.txtSizeComp.Text = "0";
+            this.txtSizeComp.TextChanged += new System.EventHandler(this.txtSizeComp_TextChanged);
             // 
             // frmMainBody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 652);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.pan3DModelArea);
             this.Controls.Add(this.panSideBar);
             this.Controls.Add(this.panModifier);
@@ -871,5 +894,6 @@
         private System.Windows.Forms.Button btnCloseTab;
         private System.Windows.Forms.Button btnNewTab;
         private System.Windows.Forms.UserControl userControl1;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
     }
 }

@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.Integration;
 
 namespace Senior_Project
 {
     public partial class frmMainBody : Form
     {
         frmMain mainForm;
+        //UserControl1 userControl;
         public frmMainBody(frmMain form)
         {
             InitializeComponent();
+            //userControl = new UserControl1();
             mainForm = form;
         }
 
@@ -52,7 +55,9 @@ namespace Senior_Project
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 fullFilePath = openFileDialog1.FileName;
+                elementHost1.Child = new UserControl1(fullFilePath);
                 mainForm.renameCurrentTab(openFileDialog1.SafeFileName);
+                //userControl.changeSTLModel(@"C:\Users\Johnathon\Desktop\DAF CF met trailer.STL");
             }
         }
 
@@ -107,6 +112,16 @@ namespace Senior_Project
         }
 
         private void txtPerimeters_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void elementHost1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+        {
+
+        }
+
+        private void txtSizeComp_TextChanged(object sender, EventArgs e)
         {
 
         }
