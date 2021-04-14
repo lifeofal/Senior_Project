@@ -82,6 +82,7 @@
     <Compile Include="frmGeneral.Designer.cs">
       <DependentUpon>frmGeneral.cs</DependentUpon>
     </Compile>
+    <Compile Include="SettingObject.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
