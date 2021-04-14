@@ -76,16 +76,13 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="frmGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmGeneral.Designer.cs">
       <DependentUpon>frmGeneral.cs</DependentUpon>
     </Compile>
-=======
     <Compile Include="SettingObject.cs" />
->>>>>>> gCode_Gui_Imp
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
