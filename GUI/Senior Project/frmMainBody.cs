@@ -91,8 +91,8 @@ namespace Senior_Project
 
             string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-            // Write the string array to a new file named "WriteLines.txt".
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "WriteLines.txt")))
+            // Write the string array to a new file
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "config.ini")))
             {
                 foreach (string line in configDefaults)
                     outputFile.WriteLine(line);
