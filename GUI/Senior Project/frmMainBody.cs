@@ -15,6 +15,7 @@ namespace Senior_Project
     {
         frmMain mainForm;
         //UserControl1 userControl;
+        List<String> settings;
         public frmMainBody(frmMain form)
         {
             InitializeComponent();
@@ -124,6 +125,16 @@ namespace Senior_Project
         private void txtSizeComp_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public void saveSettings(List<String> data)
+        {
+            settings = data;
+        }
+        
+        public List<String> getSettings()
+        {
+            return settings;
         }
     }
 }

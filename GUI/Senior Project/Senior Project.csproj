@@ -76,6 +76,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGeneral.Designer.cs">
+      <DependentUpon>frmGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,11 +100,26 @@
     <Compile Include="frmOutput.Designer.cs">
       <DependentUpon>frmOutput.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettingsGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettingsGeneral.Designer.cs">
+      <DependentUpon>frmSettingsGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmGeneral.resx">
+      <DependentUpon>frmGeneral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOutput.resx">
       <DependentUpon>frmOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettingsGeneral.resx">
+      <DependentUpon>frmSettingsGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

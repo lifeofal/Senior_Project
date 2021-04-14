@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Senior_Project
@@ -72,5 +73,7 @@ namespace Senior_Project
             TabPage currentPage = tabController.TabPages[tabController.SelectedIndex];
             currentPage.Text = name;
         }
+
+
     }
 }

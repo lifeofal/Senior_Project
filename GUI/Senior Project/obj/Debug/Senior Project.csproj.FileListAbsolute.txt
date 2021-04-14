@@ -119,3 +119,6 @@ C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior Pr
 C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.csproj.CopyComplete
 C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.exe
 C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.pdb
+C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmGeneral.resources
+C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmSettings.resources
+C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmSettingsGeneral.resources
