@@ -22,6 +22,15 @@ namespace Senior_Project
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
+    /// CONTROLS
+    /// Use W/S to move the object away from/towards the camera
+    /// Use C/V to rotate
+    /// Use F to change rotation axis
+    /// Use Q/A to move object up/down
+    /// Use E/D to increse/decrease object size
+    /// Use Z to set object flat on table
+    /// Use B to reset the object 
+    /// Use Y to export model data
     public partial class UserControl1 : UserControl
     {
         //Path to the model file
