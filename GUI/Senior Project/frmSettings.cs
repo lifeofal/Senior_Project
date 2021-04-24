@@ -68,13 +68,11 @@ namespace Senior_Project
         {
             List<String> data = new List<String>();
 
-
+            return null;
         }
         private void btnApply_Click(object sender, EventArgs e)
         {
-
-
-            main.saveSettings();
+            //main.saveSettings();
         }
     }
 }
