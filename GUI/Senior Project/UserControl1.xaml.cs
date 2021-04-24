@@ -22,16 +22,30 @@ namespace Senior_Project
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
+    /// CONTROLS
+    /// Use W/S to move the object away from/towards the camera
+    /// Use C/V to rotate
+    /// Use F to change rotation axis
+    /// Use Q/A to move object up/down
+    /// Use E/D to increse/decrease object size
+    /// Use Z to set object flat on table
+    /// Use B to reset the object 
+    /// Use Y to export model data
     public partial class UserControl1 : UserControl
     {
         //Path to the model file
-        private int degree = 0;
+        private int degreeX = 0;
+        private int degreeY = 0;
+        private int degreeZ = 0;
+        Boolean xAxis = false;
+        Boolean yAxis = false;
+        Boolean zAxis = true;
         private Point3D currentPosition;
         MeshGeometryVisual3D obj = new MeshGeometryVisual3D();
         MeshGeometry3D mesh = new MeshGeometry3D();
         PerspectiveCamera myPCamera = new PerspectiveCamera();
         Model3DGroup model = new Model3DGroup();
-        Vector3D rotVector = new Vector3D(0, 0, -1);
+        //The following two variables affect the table size. These should obtain their values from the config file. 
         double xMaxi = 300;
         double yMaxi = 300;
         double scaleX = 1;
@@ -45,6 +59,7 @@ namespace Senior_Project
         {
             InitializeComponent();
 
+            
             //Initialize the STL object
             //obj.Content = Display3d(@"C:\Users\Johnathon\Desktop\DAF CF met trailer.STL");
             model = (Model3DGroup)Display3d(filepath);
@@ -67,7 +82,6 @@ namespace Senior_Project
 
             //If the object is too large for the table, scale it down until it isn't. 
             scaleDown();
-
             //Event handlers to allow for transformations using mouse clicks or keys
             //C key rotates the object left. V key rotates the object right.  
             //W key pushes the object away from the camera. S key pulls the object towards the camera.
@@ -80,7 +94,6 @@ namespace Senior_Project
             viewPort3d.KeyDown += new KeyEventHandler(setRotationAxis);
             viewPort3d.KeyDown += new KeyEventHandler(moveUpDown);
             viewPort3d.KeyDown += new KeyEventHandler(downToTable);
-            viewPort3d.KeyDown += new KeyEventHandler(setRotateHandle);
             // Defines the camera used to view the 3D object. In order to view the 3D object,
             // the camera must be positioned and pointed such that the object is within view
             // of the camera.
@@ -154,22 +167,17 @@ namespace Senior_Project
                 }
 
                 Transform3DGroup trans3dgroup = new Transform3DGroup();
-                TranslateTransform3D trans = new TranslateTransform3D(currentPosition.X - centerPoint.X, currentPosition.Y - centerPoint.Y, zLow);
-                ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, currentPosition.X, currentPosition.Y, zLow);
-                RotateTransform3D rot = new RotateTransform3D(new AxisAngleRotation3D(rotVector, degree), currentPosition);
+                TranslateTransform3D trans = new TranslateTransform3D(currentPosition.X - centerPoint.X, currentPosition.Y - centerPoint.Y, currentPosition.Z);
+                ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, currentPosition.X, currentPosition.Y, currentPosition.Z);
+                RotateTransform3D rotX = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(-1,0,0), degreeX), currentPosition);
+                RotateTransform3D rotY = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0,-1,0), degreeY), currentPosition);
+                RotateTransform3D rotZ = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, -1), degreeZ), currentPosition);
                 trans3dgroup.Children.Add(trans);
-                trans3dgroup.Children.Add(rot);
+                trans3dgroup.Children.Add(rotX);
+                trans3dgroup.Children.Add(rotY);
+                trans3dgroup.Children.Add(rotZ);
                 trans3dgroup.Children.Add(scale);
-                if (isInBounds(trans3dgroup))
-                {
-                    obj.Transform = trans3dgroup;
-                }
-                else
-                {
-                    scaleX = prevScaleX;
-                    scaleY = prevScaleY;
-                    scaleZ = prevScaleZ;
-                }
+                obj.Transform = trans3dgroup;
             }
         }
 
@@ -181,9 +189,7 @@ namespace Senior_Project
             Transform3DGroup trans3dgroup = new Transform3DGroup();
             TranslateTransform3D trans = new TranslateTransform3D(currentPosition.X - centerPoint.X, currentPosition.Y - centerPoint.Y, zLow);
             ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, currentPosition.X, currentPosition.Y, zLow);
-            RotateTransform3D rot = new RotateTransform3D(new AxisAngleRotation3D(rotVector, degree), currentPosition);
             trans3dgroup.Children.Add(trans);
-            trans3dgroup.Children.Add(rot);
             trans3dgroup.Children.Add(scale);
             if (isInBounds(trans3dgroup))
             {
@@ -240,27 +246,27 @@ namespace Senior_Project
                 //Use the length of each individual direction to calculate the goal position
                 double goalXPos = camPoint.X + xOffset;
                 double goalYPos = camPoint.Y + yOffset;
+                Point3D goalPos = new Point3D(goalXPos, goalYPos, currentPosition.Z);
 
                 //Create vector object using goal position and centerpoint for the translation
                 Vector3D goalVector = new Vector3D(goalXPos - centerPoint.X, goalYPos - centerPoint.Y, 0);
 
+
                 //Create transformation group - use to execute translation and also save previous rotation and scaling status 
-                TranslateTransform3D trans = new TranslateTransform3D(goalXPos - centerPoint.X, goalYPos - centerPoint.Y, zLow);
-                ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, currentPosition.X, currentPosition.Y, currentPosition.Z);
-                RotateTransform3D rot = new RotateTransform3D(new AxisAngleRotation3D(rotVector, degree), currentPosition);
+                TranslateTransform3D trans = new TranslateTransform3D(goalXPos - centerPoint.X, goalYPos - centerPoint.Y, currentPosition.Z);
+                ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, goalXPos, goalYPos, currentPosition.Z);
+                RotateTransform3D rotX = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(-1, 0, 0), degreeX), goalPos);
+                RotateTransform3D rotY = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, -1, 0), degreeY), goalPos);
+                RotateTransform3D rotZ = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, -1), degreeZ), goalPos);
                 Transform3DGroup trans3dgroup = new Transform3DGroup();
                 trans3dgroup.Children.Add(trans);
-                trans3dgroup.Children.Add(rot);
+                trans3dgroup.Children.Add(rotX);
+                trans3dgroup.Children.Add(rotY);
+                trans3dgroup.Children.Add(rotZ);
                 trans3dgroup.Children.Add(scale);
-
-                //Test to see if the transformation keeps the object within bounds
-                if (isInBounds(trans3dgroup))
-                {
-                    obj.Transform = trans3dgroup;
-                    currentPosition.X = goalXPos;
-                    currentPosition.Y = goalYPos;
-                }
-                myPCamera.LookDirection = new Vector3D(100 - myPCamera.Position.X, 100 - myPCamera.Position.Y, 0 - myPCamera.Position.Z);
+                obj.Transform = trans3dgroup;
+                currentPosition.X = goalXPos;
+                currentPosition.Y = goalYPos;
             }
         }
 
@@ -268,22 +274,60 @@ namespace Senior_Project
         {
             if (e.Key == Key.V || e.Key == Key.C)
             {
-                int prevDegree = degree;
                 if (e.Key == Key.V)
                 {
-                    degree += 5;
-                    if (degree == 360)
+                    if(xAxis)
                     {
-                        degree = 0;
+                        degreeX += 5;
+                        if(degreeX == 360)
+                        {
+                            degreeX = 0;
+                        }
                     }
+                    if (yAxis)
+                    {
+                        degreeY += 5;
+                        if (degreeY == 360)
+                        {
+                            degreeY = 0;
+                        }
+                    }
+                    if (zAxis)
+                    {
+                        degreeZ += 5;
+                        if (degreeZ == 360)
+                        {
+                            degreeZ = 0;
+                        }
+                    }
+
                 }
                 else
                 {
-                    if (degree == 0)
+                    if (xAxis)
                     {
-                        degree = 360;
+                        degreeX -= 5;
+                        if (degreeX == 0)
+                        {
+                            degreeX = 360;
+                        }
                     }
-                    degree -= 5;
+                    if (yAxis)
+                    {
+                        degreeY -= 5;
+                        if (degreeY == 0)
+                        {
+                            degreeY = 360;
+                        }
+                    }
+                    if (zAxis)
+                    {
+                        degreeZ -= 5;
+                        if (degreeZ == 0)
+                        {
+                            degreeZ = 360;
+                        }
+                    }
                 }
 
                 var centerPoint = getCenter();
@@ -291,20 +335,16 @@ namespace Senior_Project
                 //Use transform group to maintain status of previous translations, then execute rotation
                 Transform3DGroup trans3Dgroup = new Transform3DGroup();
                 ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, currentPosition.X, currentPosition.Y, currentPosition.Z);
-                TranslateTransform3D trans = new TranslateTransform3D(currentPosition.X - centerPoint.X, currentPosition.Y - centerPoint.Y, zLow);
-                RotateTransform3D rot = new RotateTransform3D(new AxisAngleRotation3D(rotVector, degree), currentPosition);
+                TranslateTransform3D trans = new TranslateTransform3D(currentPosition.X - centerPoint.X, currentPosition.Y - centerPoint.Y, currentPosition.Z);
+                RotateTransform3D rotX = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(-1, 0, 0), degreeX), currentPosition);
+                RotateTransform3D rotY = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, -1, 0), degreeY), currentPosition);
+                RotateTransform3D rotZ = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, -1), degreeZ), currentPosition);
                 trans3Dgroup.Children.Add(trans);
                 trans3Dgroup.Children.Add(scale);
-                trans3Dgroup.Children.Add(rot);
-
-                if (isInBounds(trans3Dgroup))
-                {
-                    obj.Transform = trans3Dgroup;
-                }
-                else
-                {
-                    degree = prevDegree;
-                }
+                trans3Dgroup.Children.Add(rotX);
+                trans3Dgroup.Children.Add(rotY);
+                trans3Dgroup.Children.Add(rotZ);
+                obj.Transform = trans3Dgroup;
             }
         }
 
@@ -379,6 +419,12 @@ namespace Senior_Project
         }
         private async Task writeData()
         {
+            //If the object is not within the bounds of the table, generate error message
+            if(!isInBounds(obj.Transform))
+            {
+                MessageBox.Show("Warning: Object not within table boundaries. Consider moving or resizing the object and try again.");
+                return;
+            }
             MeshGeometry3D mesh = (MeshGeometry3D)((GeometryModel3D)model.Children[0]).Geometry;
             Point3D[] _3dPoints = mesh.Positions.ToArray();
             Vector3D[] normVectors = mesh.Normals.ToArray();
@@ -386,6 +432,7 @@ namespace Senior_Project
             Vector3D tempVec;
             double zHeight = 0;
             StreamWriter file = new StreamWriter("ModelData.txt");
+            MessageBox.Show("Writing data to file. Please close this message.");
             for (int i = 0; i < _3dPoints.Length; i++)
             {
                 tempPoint = obj.Transform.Transform(_3dPoints[i]);
@@ -401,6 +448,7 @@ namespace Senior_Project
                 }
             }
             await file.WriteLineAsync(zHeight.ToString());
+            MessageBox.Show("Writing complete.");
 
             file.Close();
         }
@@ -448,6 +496,7 @@ namespace Senior_Project
             }
             return false;
         }
+
         private double getZLow()
         {
             Point3D[] points = obj.MeshGeometry.Positions.ToArray();
@@ -479,7 +528,9 @@ namespace Senior_Project
                 TranslateTransform3D trans = new TranslateTransform3D(startPos.X - centerPoint.X, startPos.Y - centerPoint.Y, zLow);
                 obj.Transform = trans;
                 currentPosition = startPos;
-                degree = 0;
+                degreeX = 0;
+                degreeY = 0;
+                degreeZ = 0;
                 scaleX = 1;
                 scaleY = 1;
                 scaleZ = 1;
@@ -491,25 +542,28 @@ namespace Senior_Project
         {
             if (e.Key == Key.F)
             {
-                if (rotVector.Z == -1)
+                if (zAxis)
                 {
-                    rotVector.X = -1;
-                    rotVector.Y = 0;
-                    rotVector.Z = 0;
+                    MessageBox.Show("Now rotating along X axis");
+                    xAxis = true;
+                    yAxis = false;
+                    zAxis = false;
                 }
-                else if (rotVector.X == -1)
+                else if (xAxis)
                 {
-                    rotVector.X = 0;
-                    rotVector.Y = -1;
-                    rotVector.Z = 0;
+                    MessageBox.Show("Now rotating along Y axis");
+                    xAxis = false;
+                    yAxis = true;
+                    zAxis = false;
                 }
-                else if (rotVector.Y == -1)
+                else if (yAxis)
                 {
-                    rotVector.X = 0;
-                    rotVector.Y = 0;
-                    rotVector.Z = -1;
+                    MessageBox.Show("Now rotating around Z axis");
+                    zAxis = true;
+                    xAxis = false;
+                    yAxis = false;
                 }
-                degree = 0;
+                
             }
         }
 
@@ -520,26 +574,26 @@ namespace Senior_Project
                 Point3D goalPos = currentPosition;
                 if (e.Key == Key.Q)
                 {
-                    Console.WriteLine("hey");
                     goalPos.Z += 5;
                 }
                 else
                 {
-                    Console.WriteLine("hey");
                     goalPos.Z -= 5;
                 }
                 Transform3DGroup trans3Dgroup = new Transform3DGroup();
-                ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, currentPosition.X, currentPosition.Y, currentPosition.Z);
+                ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, goalPos.X, goalPos.Y, goalPos.Z);
                 TranslateTransform3D trans = new TranslateTransform3D(goalPos.X - centerPoint.X, goalPos.Y - centerPoint.Y, goalPos.Z - centerPoint.Z);
-                RotateTransform3D rot = new RotateTransform3D(new AxisAngleRotation3D(rotVector, degree), currentPosition);
+                RotateTransform3D rotX = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(-1, 0, 0), degreeX), goalPos);
+                RotateTransform3D rotY = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, -1, 0), degreeY), goalPos);
+                RotateTransform3D rotZ = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, -1), degreeZ), goalPos);
                 trans3Dgroup.Children.Add(trans);
                 trans3Dgroup.Children.Add(scale);
-                trans3Dgroup.Children.Add(rot);
-                if (isInBounds(trans3Dgroup))
-                {
-                    obj.Transform = trans3Dgroup;
-                    currentPosition = goalPos;
-                }
+                trans3Dgroup.Children.Add(rotX);
+                trans3Dgroup.Children.Add(rotY);
+                trans3Dgroup.Children.Add(rotZ);
+                obj.Transform = trans3Dgroup;
+                currentPosition = goalPos;
+
             }
         }
 
@@ -548,36 +602,35 @@ namespace Senior_Project
             if (e.Key == Key.Z)
             {
                 Transform3DGroup trans3Dgroup = new Transform3DGroup();
-                ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, currentPosition.X, currentPosition.Y, zLow);
-                TranslateTransform3D trans = new TranslateTransform3D(currentPosition.X - centerPoint.X, currentPosition.Y - centerPoint.Y, zLow);
-                RotateTransform3D rot = new RotateTransform3D(new AxisAngleRotation3D(rotVector, degree), currentPosition);
+                double zMin = getLowestZ();
+                ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, currentPosition.X, currentPosition.Y, currentPosition.Z - zMin);
+                TranslateTransform3D trans = new TranslateTransform3D(currentPosition.X - centerPoint.X, currentPosition.Y - centerPoint.Y, currentPosition.Z - zMin);
+                currentPosition.Z -= zMin;
+                RotateTransform3D rotX = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(-1, 0, 0), degreeX), currentPosition);
+                RotateTransform3D rotY = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, -1, 0), degreeY), currentPosition);
+                RotateTransform3D rotZ = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, -1), degreeZ), currentPosition);
                 trans3Dgroup.Children.Add(trans);
                 trans3Dgroup.Children.Add(scale);
-                trans3Dgroup.Children.Add(rot);
+                trans3Dgroup.Children.Add(rotX);
+                trans3Dgroup.Children.Add(rotY);
+                trans3Dgroup.Children.Add(rotZ);
                 obj.Transform = trans3Dgroup;
-                currentPosition.Z = zLow;
             }
         }
 
-        private void setRotateHandle(object sender, KeyEventArgs e)
+        private double getLowestZ()
         {
-            if(e.Key == Key.P)
+            double zMin = 300;
+            Point3D[] points = obj.MeshGeometry.Positions.ToArray();
+            obj.Transform.Transform(points);
+            for(int i = 0; i < points.Length;i++)
             {
-                setRotate();
+                if(points[i].Z < zMin)
+                {
+                    zMin = points[i].Z;
+                }
             }
-        }
-
-        private void setRotate()
-        {
-            degree = 90;
-            Transform3DGroup trans3Dgroup = new Transform3DGroup();
-            TranslateTransform3D trans = new TranslateTransform3D(startPos.X - centerPoint.X, startPos.Y - centerPoint.Y, zLow);
-            RotateTransform3D rot = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(1,0,0), degree), currentPosition);
-            trans3Dgroup.Children.Add(trans);
-            trans3Dgroup.Children.Add(rot);
-            obj.Transform = trans3Dgroup;
-
+            return zMin;
         }
     }
 }
-
