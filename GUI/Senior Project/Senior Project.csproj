@@ -82,6 +82,12 @@
     <Compile Include="frmGeneral.Designer.cs">
       <DependentUpon>frmGeneral.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShortcuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShortcuts.Designer.cs">
+      <DependentUpon>frmShortcuts.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingObject.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettingsGeneral.resx">
       <DependentUpon>frmSettingsGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShortcuts.resx">
+      <DependentUpon>frmShortcuts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

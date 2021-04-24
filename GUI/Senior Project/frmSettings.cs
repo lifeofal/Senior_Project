@@ -74,5 +74,10 @@ namespace Senior_Project
         {
             //main.saveSettings();
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            setMainPanelForm(listBox1.SelectedIndex);
+        }
     }
 }

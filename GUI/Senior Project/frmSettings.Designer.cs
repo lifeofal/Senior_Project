@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panSidebar = new System.Windows.Forms.Panel();
-            this.panBody = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.panBody = new System.Windows.Forms.Panel();
             this.panBottom = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panSidebar.SuspendLayout();
             this.panBottom.SuspendLayout();
             this.SuspendLayout();
@@ -48,15 +48,6 @@
             this.panSidebar.Size = new System.Drawing.Size(210, 481);
             this.panSidebar.TabIndex = 0;
             // 
-            // panBody
-            // 
-            this.panBody.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panBody.Location = new System.Drawing.Point(210, 0);
-            this.panBody.Name = "panBody";
-            this.panBody.Size = new System.Drawing.Size(590, 450);
-            this.panBody.TabIndex = 0;
-            // 
             // listBox1
             // 
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -67,11 +58,22 @@
             "Filiment",
             "Print",
             "Infill",
-            "Speed"});
+            "Speed",
+            "Shortcuts"});
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(186, 436);
             this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // panBody
+            // 
+            this.panBody.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panBody.Location = new System.Drawing.Point(210, 0);
+            this.panBody.Name = "panBody";
+            this.panBody.Size = new System.Drawing.Size(590, 450);
+            this.panBody.TabIndex = 0;
             // 
             // panBottom
             // 
@@ -83,15 +85,6 @@
             this.panBottom.Name = "panBottom";
             this.panBottom.Size = new System.Drawing.Size(590, 31);
             this.panBottom.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Reset";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -112,6 +105,15 @@
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmSettings
             // 
