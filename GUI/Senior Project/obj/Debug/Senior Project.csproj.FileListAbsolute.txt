@@ -153,3 +153,6 @@ C:\Users\Alejandro\Documents\Code\Senior Project\GUI\Senior Project\obj\Debug\Se
 C:\Users\Alejandro\Documents\Code\Senior Project\GUI\Senior Project\obj\Debug\Senior Project.exe
 C:\Users\Alejandro\Documents\Code\Senior Project\GUI\Senior Project\obj\Debug\Senior Project.pdb
 C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmShortcuts.resources
+C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmNotes.resources
+C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmPrint.resources
+C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmFilament.resources

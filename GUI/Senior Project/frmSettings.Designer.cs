@@ -55,10 +55,9 @@
             this.listBox1.ItemHeight = 24;
             this.listBox1.Items.AddRange(new object[] {
             "General",
-            "Filiment",
+            "Filament",
+            "Notes",
             "Print",
-            "Infill",
-            "Speed",
             "Shortcuts"});
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
@@ -72,7 +71,7 @@
             this.panBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panBody.Location = new System.Drawing.Point(210, 0);
             this.panBody.Name = "panBody";
-            this.panBody.Size = new System.Drawing.Size(590, 450);
+            this.panBody.Size = new System.Drawing.Size(600, 450);
             this.panBody.TabIndex = 0;
             // 
             // panBottom
@@ -83,7 +82,7 @@
             this.panBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panBottom.Location = new System.Drawing.Point(210, 450);
             this.panBottom.Name = "panBottom";
-            this.panBottom.Size = new System.Drawing.Size(590, 31);
+            this.panBottom.Size = new System.Drawing.Size(600, 31);
             this.panBottom.TabIndex = 2;
             // 
             // button2
@@ -119,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 481);
+            this.ClientSize = new System.Drawing.Size(810, 481);
             this.Controls.Add(this.panBody);
             this.Controls.Add(this.panBottom);
             this.Controls.Add(this.panSidebar);

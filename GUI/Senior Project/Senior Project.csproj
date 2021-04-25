@@ -76,11 +76,29 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmFilament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFilament.Designer.cs">
+      <DependentUpon>frmFilament.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmGeneral.Designer.cs">
       <DependentUpon>frmGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotes.Designer.cs">
+      <DependentUpon>frmNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrint.Designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="frmShortcuts.cs">
       <SubType>Form</SubType>
@@ -124,6 +142,9 @@
     <Compile Include="UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmFilament.resx">
+      <DependentUpon>frmFilament.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGeneral.resx">
       <DependentUpon>frmGeneral.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,8 +154,14 @@
     <EmbeddedResource Include="frmMainBody.resx">
       <DependentUpon>frmMainBody.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNotes.resx">
+      <DependentUpon>frmNotes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOutput.resx">
       <DependentUpon>frmOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>

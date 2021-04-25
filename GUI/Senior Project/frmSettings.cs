@@ -46,10 +46,19 @@ namespace Senior_Project
             switch (formID)
             {
                 case 0: // General Settings Tab
-                    form = new frmSettingsGeneral() { TopLevel = false, TopMost = true };
-                    break;
-                case 1: // Account Manager Form
                     form = new frmGeneral() { TopLevel = false, TopMost = true };
+                    break;
+                case 1: // Filament Tab
+                    form = new frmFilament() { TopLevel = false, TopMost = true };
+                    break;
+                case 2: // Notes Tab
+                    form = new frmNotes() { TopLevel = false, TopMost = true };
+                    break;
+                case 3: // Print Tab
+                    form = new frmPrint() { TopLevel = false, TopMost = true };
+                    break;
+                case 4: // Shortcuts
+                    form = new frmShortcuts() { TopLevel = false, TopMost = true };
                     break;
             }
             form.FormBorderStyle = FormBorderStyle.None;

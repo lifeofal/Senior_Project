@@ -42,13 +42,10 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.ddPrintSettings = new System.Windows.Forms.ComboBox();
-            this.btnPrintSettings = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ddFilament = new System.Windows.Forms.ComboBox();
             this.ddPrinter = new System.Windows.Forms.ComboBox();
-            this.btnFilamentSettings = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnPrinterSettings = new System.Windows.Forms.Button();
             this.btnExportGCode = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -222,19 +219,15 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.73771F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.14754F));
             this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.ddPrintSettings, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnPrintSettings, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.ddFilament, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.ddPrinter, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.btnFilamentSettings, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.btnPrinterSettings, 2, 2);
             this.tableLayoutPanel4.Controls.Add(this.btnExportGCode, 1, 3);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(9, 6);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -252,7 +245,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 25);
+            this.label1.Size = new System.Drawing.Size(108, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Print Settings:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -262,22 +255,11 @@
             this.ddPrintSettings.FormattingEnabled = true;
             this.ddPrintSettings.Items.AddRange(new object[] {
             "- Default -"});
-            this.ddPrintSettings.Location = new System.Drawing.Point(104, 3);
+            this.ddPrintSettings.Location = new System.Drawing.Point(117, 3);
             this.ddPrintSettings.Name = "ddPrintSettings";
-            this.ddPrintSettings.Size = new System.Drawing.Size(163, 21);
+            this.ddPrintSettings.Size = new System.Drawing.Size(185, 21);
             this.ddPrintSettings.TabIndex = 1;
             this.ddPrintSettings.Text = "- Default -";
-            // 
-            // btnPrintSettings
-            // 
-            this.btnPrintSettings.FlatAppearance.BorderSize = 0;
-            this.btnPrintSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintSettings.Image = global::Senior_Project.Properties.Resources.config20x20;
-            this.btnPrintSettings.Location = new System.Drawing.Point(273, 3);
-            this.btnPrintSettings.Name = "btnPrintSettings";
-            this.btnPrintSettings.Size = new System.Drawing.Size(22, 19);
-            this.btnPrintSettings.TabIndex = 2;
-            this.btnPrintSettings.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -285,7 +267,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.Size = new System.Drawing.Size(108, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Filament :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -295,9 +277,9 @@
             this.ddFilament.FormattingEnabled = true;
             this.ddFilament.Items.AddRange(new object[] {
             "- Default -"});
-            this.ddFilament.Location = new System.Drawing.Point(104, 28);
+            this.ddFilament.Location = new System.Drawing.Point(117, 28);
             this.ddFilament.Name = "ddFilament";
-            this.ddFilament.Size = new System.Drawing.Size(163, 21);
+            this.ddFilament.Size = new System.Drawing.Size(185, 21);
             this.ddFilament.TabIndex = 1;
             this.ddFilament.Text = "- Default - ";
             // 
@@ -306,22 +288,11 @@
             this.ddPrinter.FormattingEnabled = true;
             this.ddPrinter.Items.AddRange(new object[] {
             "- Default -"});
-            this.ddPrinter.Location = new System.Drawing.Point(104, 53);
+            this.ddPrinter.Location = new System.Drawing.Point(117, 53);
             this.ddPrinter.Name = "ddPrinter";
-            this.ddPrinter.Size = new System.Drawing.Size(163, 21);
+            this.ddPrinter.Size = new System.Drawing.Size(185, 21);
             this.ddPrinter.TabIndex = 1;
             this.ddPrinter.Text = "- Default -";
-            // 
-            // btnFilamentSettings
-            // 
-            this.btnFilamentSettings.FlatAppearance.BorderSize = 0;
-            this.btnFilamentSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilamentSettings.Image = global::Senior_Project.Properties.Resources.config20x20;
-            this.btnFilamentSettings.Location = new System.Drawing.Point(273, 28);
-            this.btnFilamentSettings.Name = "btnFilamentSettings";
-            this.btnFilamentSettings.Size = new System.Drawing.Size(22, 19);
-            this.btnFilamentSettings.TabIndex = 2;
-            this.btnFilamentSettings.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -329,26 +300,15 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 25);
+            this.label3.Size = new System.Drawing.Size(108, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Printer :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnPrinterSettings
-            // 
-            this.btnPrinterSettings.FlatAppearance.BorderSize = 0;
-            this.btnPrinterSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrinterSettings.Image = global::Senior_Project.Properties.Resources.config20x20;
-            this.btnPrinterSettings.Location = new System.Drawing.Point(273, 53);
-            this.btnPrinterSettings.Name = "btnPrinterSettings";
-            this.btnPrinterSettings.Size = new System.Drawing.Size(22, 19);
-            this.btnPrinterSettings.TabIndex = 2;
-            this.btnPrinterSettings.UseVisualStyleBackColor = true;
-            // 
             // btnExportGCode
             // 
             this.btnExportGCode.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExportGCode.Location = new System.Drawing.Point(180, 78);
+            this.btnExportGCode.Location = new System.Drawing.Point(215, 78);
             this.btnExportGCode.Name = "btnExportGCode";
             this.btnExportGCode.Size = new System.Drawing.Size(87, 19);
             this.btnExportGCode.TabIndex = 3;
@@ -844,13 +804,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ddPrintSettings;
-        private System.Windows.Forms.Button btnPrintSettings;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ddFilament;
         private System.Windows.Forms.ComboBox ddPrinter;
-        private System.Windows.Forms.Button btnFilamentSettings;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnPrinterSettings;
         private System.Windows.Forms.Button btnExportGCode;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
