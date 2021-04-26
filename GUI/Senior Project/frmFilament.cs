@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Senior_Project
 {
-    public partial class frmFilament : Form, FormAbstraction
+    public partial class frmFilament : Form
     {
 
         List<String> savedSettings;

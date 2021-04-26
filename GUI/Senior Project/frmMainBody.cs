@@ -20,7 +20,7 @@ namespace Senior_Project
         List<String> settings;
         List<String> configDefaults;
 
-        SettingsObject[] formSettings = new SettingsObject[5];
+        List<SettingsObject>[] formSettings = new List<SettingsObject>[5];
         //formSettings index in order: General, Filament, Notes, Print, Shortcuts
 
 

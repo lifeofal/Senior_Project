@@ -76,7 +76,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAbstraction.cs" />
     <Compile Include="frmFilament.cs">
       <SubType>Form</SubType>
     </Compile>
