@@ -92,6 +92,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.frmSettings_Load);
             this.panSidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 

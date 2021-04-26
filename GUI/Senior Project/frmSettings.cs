@@ -75,7 +75,7 @@ namespace Senior_Project
             form.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, FormClosingEventArgs e)
         {
             this.Close();
         }
@@ -100,6 +100,11 @@ namespace Senior_Project
         {
             List<SettingsObject> obj = main.returnAdvSettings(formIndex);
             return obj;
+        }
+
+        private void frmSettings_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

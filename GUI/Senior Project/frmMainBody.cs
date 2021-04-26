@@ -20,6 +20,11 @@ namespace Senior_Project
         List<String> settings;
         List<String> configDefaults;
 
+        Form openSettings;
+
+        //bool for if windows are already open
+        bool frmSettingsOpen = false;
+
         List<SettingsObject>[] formSettings = new List<SettingsObject>[5];
         //formSettings index in order: General, Filament, Notes, Print, Shortcuts
 
@@ -30,6 +35,8 @@ namespace Senior_Project
             //userControl = new UserControl1();
             mainForm = form;
             configDefaults = generateDefaultConfigFile();
+            openSettings = new frmSettings(this);
+
         }
 
         private void btnNewTab_Click(object sender, EventArgs e)
@@ -78,8 +85,22 @@ namespace Senior_Project
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            Form form = new frmSettings(this);
-            form.Show();
+            if (openSettings.IsDisposed)
+            {
+                Console.WriteLine("Disposed");
+                openSettings = new frmSettings(this);
+              
+            }
+            openSettings.Show();
+            openSettings.BringToFront();
+            openSettings.Activate();
+            
+            
+        }
+
+        public void frmSettingsClosingBool()
+        {
+            frmSettingsOpen = false;
         }
 
         private void userControl2_Load(object sender, EventArgs e)
