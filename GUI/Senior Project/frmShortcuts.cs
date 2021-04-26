@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Senior_Project
 {
-    public partial class frmShortcuts : Form, FormAbstraction
+    public partial class frmShortcuts : Form
     {
         public frmShortcuts()
         {

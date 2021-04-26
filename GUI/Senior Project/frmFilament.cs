@@ -12,12 +12,13 @@ namespace Senior_Project
 {
     public partial class frmFilament : Form
     {
-
+        frmSettings mainSettings;
         List<String> savedSettings;
         int formIndex = 1;
-        public frmFilament()
+        public frmFilament(frmSettings parent)
         {
             InitializeComponent();
+            mainSettings = parent;
         }
         public int getFormIndex()
         {
@@ -69,6 +70,12 @@ namespace Senior_Project
             setList.Add(setting_object);
 
             return setList;
+        }
+       
+
+        private void btnApply_Click_1(object sender, EventArgs e)
+        {
+            mainSettings.getData(GetSettings(), getFormIndex());
         }
     }
 }
