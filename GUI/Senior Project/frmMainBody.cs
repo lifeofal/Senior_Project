@@ -111,6 +111,19 @@ namespace Senior_Project
         private void btnExportGCode_Click(object sender, EventArgs e)
         {
             List<SettingsObject> settingsOutput = generateSettingsOutput();
+            if(formSettings != null)
+            {
+                foreach(List<SettingsObject> x in formSettings)
+                {
+                    if (x != null)
+                    {
+                        foreach (SettingsObject y in x)
+                        {
+                            settingsOutput.Add(y);
+                        }
+                    }
+                }
+            }
 
             foreach(SettingsObject x in settingsOutput)
             {
@@ -136,6 +149,11 @@ namespace Senior_Project
 
 
 
+        }
+
+        private void advancedSettingsIO()
+        {
+            
         }
 
         private List<SettingsObject> generateSettingsOutput()
