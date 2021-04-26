@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbPrintersSupported = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+<<<<<<< HEAD
             this.panBottom = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
@@ -44,6 +45,10 @@
             this.panTopBar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panBottom.SuspendLayout();
+=======
+            this.panTopBar.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+>>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
             this.SuspendLayout();
             // 
             // panTopBar
@@ -156,6 +161,7 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(576, 376);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
+<<<<<<< HEAD
             // panBottom
             // 
             this.panBottom.Controls.Add(this.button2);
@@ -197,12 +203,18 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+=======
+>>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
             // frmGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(600, 480);
             this.Controls.Add(this.panBottom);
+=======
+            this.ClientSize = new System.Drawing.Size(600, 450);
+>>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panTopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -211,7 +223,10 @@
             this.panTopBar.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+<<<<<<< HEAD
             this.panBottom.ResumeLayout(false);
+=======
+>>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
             this.ResumeLayout(false);
 
         }
@@ -227,9 +242,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbPrintersSupported;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+<<<<<<< HEAD
         private System.Windows.Forms.Panel panBottom;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button button1;
+=======
+>>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
     }
 }

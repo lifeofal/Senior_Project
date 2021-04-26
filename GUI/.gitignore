@@ -1,4 +1,8 @@
 *.so
 *.csproj
+<<<<<<< HEAD
 *.exe
 *.suo
+=======
+*.exe
+>>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd

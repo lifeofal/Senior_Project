@@ -119,5 +119,12 @@ namespace Senior_Project
         {
             this.Close();
         }
+
+        public void resetValues()
+        {
+            cbBedShape.SelectedIndex = 0;
+            cbPrintersSupported.SelectedIndex = 0;
+            txtPrinterNotes.Text = "";
+        }
     }
 }

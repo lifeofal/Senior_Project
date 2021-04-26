@@ -75,10 +75,20 @@ namespace Senior_Project
             currentPage.Text = name;
         }
 
-
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+<<<<<<< HEAD
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+=======
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmSettings().Show();
+>>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
         }
     }
 }

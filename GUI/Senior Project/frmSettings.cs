@@ -16,9 +16,11 @@ namespace Senior_Project
         public List<String> previousSettings;
         public List<String> defaultSettings;
 
+
         Form currentForm;
 
         public List<Form> forms;
+
 
         public frmSettings()
         {
@@ -40,6 +42,7 @@ namespace Senior_Project
         {
             forms = new List<Form>();
             
+
             forms.Add(new frmGeneral(this) { TopLevel = false, TopMost = true });
             forms.Add(new frmFilament(this) { TopLevel = false, TopMost = true });
             forms.Add(new frmShortcuts() { TopLevel = false, TopMost = true });
