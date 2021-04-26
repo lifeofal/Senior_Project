@@ -43,10 +43,6 @@
         "xlocale": "cpp",
         "xlocinfo": "cpp",
         "xlocnum": "cpp",
-        "xtree": "cpp",
-        "queue": "cpp",
-        "algorithm": "cpp",
-        "deque": "cpp",
-        "sstream": "cpp"
+        "xtree": "cpp"
     }
 }
