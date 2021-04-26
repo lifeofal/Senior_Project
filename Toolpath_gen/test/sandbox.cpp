@@ -15,7 +15,7 @@ int main()
 {
     Settings setting("../settings/config.ini");
 
-    float setting1 = setting.f_get_setting("");
+    float setting1 = setting.f_get_setting("wipe");
     cout<<setting1;
     string setting2 = setting.s_get_setting("end_filament_gcode");
     cout<<setting2;
