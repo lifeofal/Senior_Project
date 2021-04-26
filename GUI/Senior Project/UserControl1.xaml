@@ -1,8 +1,8 @@
-﻿<UserControl x:Class="Senior_Project.UserControl1"
+<UserControl x:Class="Senior_Project.UserControl1"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-            xmlns:helix="http://helix-toolkit.org/wpf"
-            Height="750" Width="1400">
+            xmlns:helix="http://helix-toolkit.org/wpf" xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+             Height="750" Width="1400">
     <Grid Background="White">
         <helix:HelixViewport3D x:Name="viewPort3d" ZoomExtentsWhenLoaded="true" Margin="38,-12,8,-17.2" RenderTransformOrigin="-0.837,0.444">
 
@@ -18,7 +18,38 @@
             </helix:HelixViewport3D.Children>
 
         </helix:HelixViewport3D>
-
+        <Menu HorizontalAlignment="Left" Margin="0,0,0,735">
+            <MenuItem Header="X Offset" MouseEnter="showTrans">
+                <TextBox Name="xOffsetInput" Width="50" Height="21.96" KeyUp="setTrans"></TextBox>
+            </MenuItem>
+            <MenuItem Header="Y Offset" MouseEnter="showTrans">
+                <TextBox Name="yOffsetInput" Width="50" Height="21.96" KeyUp="setTrans"></TextBox>
+            </MenuItem>
+            <MenuItem Header="Z Offset" MouseEnter="showTrans">
+                <TextBox Name="zOffsetInput" Width="50" Height="21.96" KeyUp="setTrans"></TextBox>
+            </MenuItem>
+            <MenuItem Header="X Rotation" MouseEnter="showRot">
+                <TextBox Name="xRotInput"  Width="50" Height="21.96" KeyUp="setRot"></TextBox>
+            </MenuItem>
+            <MenuItem Header="Y Rotation"  MouseEnter="showRot">
+                <TextBox Name="yRotInput"  Width="50" Height="21.96" KeyUp="setRot"></TextBox>
+            </MenuItem>
+            <MenuItem Header="Z Rotation"  MouseEnter="showRot">
+                <TextBox Name="zRotInput"  Width="50" Height="21.96" KeyUp="setRot"></TextBox>
+            </MenuItem>
+            <MenuItem Header="X Scale" MouseEnter="showScale">
+                <TextBox Name="xScaleInput" Width="50" KeyUp="setScale"></TextBox>
+            </MenuItem>
+            <MenuItem Header="Y Scale" MouseEnter="showScale">
+                <TextBox Name="yScaleInput" Width="50" KeyUp="setScale"></TextBox>
+            </MenuItem>
+            <MenuItem Header="Z Scale" MouseEnter="showScale">
+                <TextBox Name ="zScaleInput" Width="50" KeyUp="setScale"></TextBox>
+            </MenuItem>
+            <Button Click="reset">Reset</Button>
+            <Button Click="downToTable">Level</Button>
+            <Button Click="writeDataHandle">Extract Model Data</Button>
+        </Menu>
     </Grid>
 
 </UserControl>
