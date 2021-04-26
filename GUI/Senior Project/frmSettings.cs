@@ -15,6 +15,7 @@ namespace Senior_Project
         frmMainBody main;
         public List<String> previousSettings;
         public List<String> defaultSettings;
+        Form currentForm;
         public frmSettings()
         {
             InitializeComponent();
@@ -65,6 +66,7 @@ namespace Senior_Project
             form.Dock = DockStyle.Fill;
             panBody.Controls.Clear(); //Clears Panel Before Placing New Form
             this.panBody.Controls.Add(form);
+            setCurrentForm(form);
             form.Show();
         }
 
@@ -79,9 +81,20 @@ namespace Senior_Project
 
             return null;
         }
+
+        public void setCurrentForm(Form form)
+        {
+            currentForm = form;
+        }
+        public Form getCurrentForm()
+        {
+            return currentForm;
+        }
+       
         private void btnApply_Click(object sender, EventArgs e)
         {
-            //main.saveSettings();
+            Form form = getCurrentForm();
+            main.saveSettings(form.GetSettings(), form.getFormIndex());
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

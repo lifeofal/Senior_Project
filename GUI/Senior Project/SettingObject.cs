@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Senior_Project
 {
-    class SettingsObject
+    public class SettingsObject
     {
         private string gSO, config_Value;
 

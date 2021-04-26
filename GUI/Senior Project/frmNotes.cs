@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Senior_Project
 {
-    public partial class frmNotes : Form
+    public partial class frmNotes : Form, FormAbstraction
     {
         public frmNotes()
         {

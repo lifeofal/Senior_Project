@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Senior_Project
 {
-    public partial class frmPrint : Form
+    public partial class frmPrint : Form, FormAbstraction
     {
         public frmPrint()
         {
