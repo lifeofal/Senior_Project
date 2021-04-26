@@ -16,5 +16,12 @@ namespace Senior_Project
         {
             InitializeComponent();
         }
+
+        public void resetValues()
+        {
+            cbBedShape.SelectedIndex = 0;
+            cbPrintersSupported.SelectedIndex = 0;
+            txtPrinterNotes.Text = "";
+        }
     }
 }

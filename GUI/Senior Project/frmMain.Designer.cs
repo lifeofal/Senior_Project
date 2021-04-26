@@ -32,7 +32,6 @@
             this.fielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,18 +70,11 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generalToolStripMenuItem,
             this.createNewTabToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // generalToolStripMenuItem
-            // 
-            this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
-            this.generalToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.generalToolStripMenuItem.Text = "General";
-            this.generalToolStripMenuItem.Click += new System.EventHandler(this.generalToolStripMenuItem_Click);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.settingsToolStripMenuItem.Text = "Tab Control";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // createNewTabToolStripMenuItem
             // 
@@ -90,28 +82,29 @@
             this.newTabToolStripMenuItem,
             this.removeTabToolStripMenuItem});
             this.createNewTabToolStripMenuItem.Name = "createNewTabToolStripMenuItem";
-            this.createNewTabToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.createNewTabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createNewTabToolStripMenuItem.Text = "Tabs";
             // 
             // newTabToolStripMenuItem
             // 
             this.newTabToolStripMenuItem.Name = "newTabToolStripMenuItem";
-            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newTabToolStripMenuItem.Text = "New Tab";
             this.newTabToolStripMenuItem.Click += new System.EventHandler(this.newTabToolStripMenuItem_Click);
             // 
             // removeTabToolStripMenuItem
             // 
             this.removeTabToolStripMenuItem.Name = "removeTabToolStripMenuItem";
-            this.removeTabToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.removeTabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeTabToolStripMenuItem.Text = "Remove Tab";
             this.removeTabToolStripMenuItem.Click += new System.EventHandler(this.removeTabToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.helpToolStripMenuItem.Text = "Settings";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // tabController
             // 
@@ -148,7 +141,6 @@
         private System.Windows.Forms.ToolStripMenuItem fielToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.TabControl tabController;
         private System.Windows.Forms.ToolStripMenuItem createNewTabToolStripMenuItem;

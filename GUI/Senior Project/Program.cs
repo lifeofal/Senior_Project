@@ -16,7 +16,7 @@ namespace Senior_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSettings());
+            Application.Run(new frmMain());
         }
     }
 }
