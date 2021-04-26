@@ -95,5 +95,11 @@ namespace Senior_Project
         {
             main.saveSettings(list, formIndex);
         }
+
+        public List<SettingsObject> getPrevSettings(int formIndex)
+        {
+            List<SettingsObject> obj = main.returnAdvSettings(formIndex);
+            return obj;
+        }
     }
 }

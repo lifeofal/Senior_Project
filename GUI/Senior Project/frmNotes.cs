@@ -19,10 +19,29 @@ namespace Senior_Project
         {
             InitializeComponent();
             mainSettings = main;
+            setPrevSettings();
         }
         public int getFormIndex()
         {
             return formIndex;
+        }
+
+        public void setPrevSettings()
+        {
+            List<SettingsObject> prevSettings = mainSettings.getPrevSettings(formIndex);
+            if (prevSettings == null)
+            {
+                txtNotes.Text = "";
+                
+                return;
+            }
+            foreach (SettingsObject x in prevSettings)
+            {
+                if (x.get_gSO() == "notes")
+                {
+                    txtNotes.Text = x.get_config_Value();
+                }
+            }
         }
 
         public List<SettingsObject> GetSettings()
@@ -32,14 +51,19 @@ namespace Senior_Project
 
             //List<String> filSettings = new List<String>();
 
-            //--------Color
+            //--------setList
 
             if (txtNotes.Text.ToString() != null)
             {
                 setting_object = new SettingsObject("notes", txtNotes.Text.ToString());
 
             }
-            
+            else
+            {
+                setting_object = new SettingsObject("notes", "");
+            }
+            setList.Add(setting_object);
+
 
             return setList;
         }

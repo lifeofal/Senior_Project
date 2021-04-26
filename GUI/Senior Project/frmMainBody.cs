@@ -78,7 +78,8 @@ namespace Senior_Project
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Settings Form Should Pop Up Here");
+            Form form = new frmSettings(this);
+            form.Show();
         }
 
         private void userControl2_Load(object sender, EventArgs e)
@@ -316,6 +317,11 @@ namespace Senior_Project
         public List<String> getSettings()
         {
             return settings;
+        }
+        public List<SettingsObject> returnAdvSettings(int formIndex)
+        {
+            List<SettingsObject> obj = formSettings[formIndex];
+            return obj;
         }
     }
 }

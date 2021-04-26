@@ -76,11 +76,12 @@
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // generalToolStripMenuItem
             // 
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
-            this.generalToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.generalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.generalToolStripMenuItem.Text = "General";
             this.generalToolStripMenuItem.Click += new System.EventHandler(this.generalToolStripMenuItem_Click);
             // 
@@ -90,7 +91,7 @@
             this.newTabToolStripMenuItem,
             this.removeTabToolStripMenuItem});
             this.createNewTabToolStripMenuItem.Name = "createNewTabToolStripMenuItem";
-            this.createNewTabToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.createNewTabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createNewTabToolStripMenuItem.Text = "Tabs";
             // 
             // newTabToolStripMenuItem

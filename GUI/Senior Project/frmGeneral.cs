@@ -12,17 +12,45 @@ namespace Senior_Project
 {
     public partial class frmGeneral : Form
     {
-        int formIndex;
+        int formIndex = 0;
         frmSettings mainSettings;
         public frmGeneral(frmSettings main)
         {
             InitializeComponent();
             mainSettings = main;
+            setPrevSettings();
         }
 
         public int getFormIndex()
         {
             return formIndex;
+        }
+
+        public void setPrevSettings()
+        {
+            List<SettingsObject> prevSettings = mainSettings.getPrevSettings(formIndex);
+            if(prevSettings == null)
+            {
+                cbBedShape.SelectedIndex = 0;
+                cbPrintersSupported.SelectedIndex = 0;
+                txtPrinterNotes.Text = "";
+                return;
+            }
+            foreach(SettingsObject x in prevSettings)
+            {
+                if(x.get_gSO() == "bed_shape")
+                {
+                    cbBedShape.Text = x.get_config_Value();
+                }
+                else if(x.get_gSO() == "printer_settings_id")
+                {
+                    cbPrintersSupported.SelectedItem = x.get_config_Value();
+                }
+                else if(x.get_gSO() == "printer_notes")
+                {
+                    txtPrinterNotes.Text = x.get_config_Value();
+                }
+            }
         }
 
         public List<SettingsObject> GetSettings()

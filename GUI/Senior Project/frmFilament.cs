@@ -13,16 +13,48 @@ namespace Senior_Project
     public partial class frmFilament : Form
     {
         frmSettings mainSettings;
-        List<String> savedSettings;
+       
         int formIndex = 1;
         public frmFilament(frmSettings parent)
         {
             InitializeComponent();
             mainSettings = parent;
+            setPrevSettings();
         }
         public int getFormIndex()
         {
             return formIndex;
+        }
+        public void setPrevSettings()
+        {
+            List<SettingsObject> prevSettings = mainSettings.getPrevSettings(formIndex);
+            if (prevSettings == null)
+            {
+                txtFilamentColor.Text = "";
+                txtFilamentCost.Text = "";
+                txtFilamentDensity.Text = "";
+                txtFilamentNotes.Text = "";
+                return;
+            }
+            foreach (SettingsObject x in prevSettings)
+            {
+                if (x.get_gSO() == "filament_colour")
+                {
+                    txtFilamentColor.Text = x.get_config_Value();
+                }
+                else if (x.get_gSO() == "filament_cost")
+                {
+                    txtFilamentCost.Text = x.get_config_Value();
+                }
+                else if (x.get_gSO() == "filament_density")
+                {
+                    txtFilamentDensity.Text = x.get_config_Value();
+                }
+                else if(x.get_gSO() == "filament_notes")
+                {
+                    txtFilamentNotes.Text = x.get_config_Value();
+                }
+            }
         }
 
         public List<SettingsObject> GetSettings()
