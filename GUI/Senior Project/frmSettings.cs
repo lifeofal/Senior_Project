@@ -40,10 +40,10 @@ namespace Senior_Project
         {
             forms = new List<Form>();
             
-            forms.Add(new frmGeneral() { TopLevel = false, TopMost = true });
-            forms.Add(new frmFilament() { TopLevel = false, TopMost = true });
+            forms.Add(new frmGeneral(this) { TopLevel = false, TopMost = true });
+            forms.Add(new frmFilament(this) { TopLevel = false, TopMost = true });
             forms.Add(new frmShortcuts() { TopLevel = false, TopMost = true });
-            forms.Add(new frmNotes() { TopLevel = false, TopMost = true });
+            forms.Add(new frmNotes(this) { TopLevel = false, TopMost = true });
         }
 
 
@@ -54,7 +54,7 @@ namespace Senior_Project
             switch (formID)
             {
                 case 0: // General Settings Tab
-                    form = new frmGeneral() { TopLevel = false, TopMost = true };
+                    form = new frmGeneral(this) { TopLevel = false, TopMost = true };
                     break;
                 case 1: // Filament Tab
                     form = new frmFilament(this) { TopLevel = false, TopMost = true };
@@ -63,7 +63,7 @@ namespace Senior_Project
                     form = new frmShortcuts() { TopLevel = false, TopMost = true };
                     break;
                 case 3: 
-                    form = new frmNotes() { TopLevel = false, TopMost = true };
+                    form = new frmNotes(this) { TopLevel = false, TopMost = true };
                     break;
             }
 

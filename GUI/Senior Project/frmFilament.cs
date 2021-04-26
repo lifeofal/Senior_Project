@@ -69,6 +69,14 @@ namespace Senior_Project
             }
             setList.Add(setting_object);
 
+            if (txtFilamentNotes.Text.ToString() != null)
+            {
+                setting_object = new SettingsObject("filament_notes", txtFilamentNotes.Text.ToString());
+            }
+            else { setting_object = new SettingsObject("filament_notes", ""); }
+
+            setList.Add(setting_object);
+
             return setList;
         }
        
@@ -76,6 +84,19 @@ namespace Senior_Project
         private void btnApply_Click_1(object sender, EventArgs e)
         {
             mainSettings.getData(GetSettings(), getFormIndex());
+        }
+
+        private void button1_Click(object sender, EventArgs e)//reset
+        {
+            txtFilamentColor.Text = "";
+            txtFilamentCost.Text = "";
+            txtFilamentDensity.Text = "";
+            txtFilamentNotes.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -13,9 +13,12 @@ namespace Senior_Project
     public partial class frmNotes : Form
     {
         private int formIndex = 3;
-        public frmNotes()
+
+        frmSettings mainSettings;
+        public frmNotes(frmSettings main)
         {
             InitializeComponent();
+            mainSettings = main;
         }
         public int getFormIndex()
         {
@@ -31,42 +34,29 @@ namespace Senior_Project
 
             //--------Color
 
-            if (txtFilamentColor.Text.ToString() != null)
+            if (txtNotes.Text.ToString() != null)
             {
-                setting_object = new SettingsObject("filament_colour", txtFilamentColor.Text.ToString());
+                setting_object = new SettingsObject("notes", txtNotes.Text.ToString());
 
             }
-            else
-            {
-                setting_object = new SettingsObject("filament_colour", "");
-            }
-            setList.Add(setting_object);
-
-            //---------Cost
-            if (txtFilamentCost.Text.ToString() != null)
-            {
-                setting_object = new SettingsObject("filament_cost", txtFilamentCost.Text.ToString());
-
-            }
-            else
-            {
-                setting_object = new SettingsObject("filament_cost", "");
-            }
-            setList.Add(setting_object);
-
-            //--------Density
-            if (txtFilamentDensity.Text.ToString() != null)
-            {
-                setting_object = new SettingsObject("filament_density", txtFilamentDensity.Text.ToString());
-
-            }
-            else
-            {
-                setting_object = new SettingsObject("filament_density", "");
-            }
-            setList.Add(setting_object);
+            
 
             return setList;
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            mainSettings.getData(GetSettings(), getFormIndex());
+        }
+
+        private void button1_Click(object sender, EventArgs e)//reset
+        {
+            txtNotes.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
