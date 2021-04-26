@@ -4,7 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/Toolpath_gen/lib"
+                "${workspaceFolder}/Slicing/lib",
+                "${workspaceFolder}/Slicing/src"
             ],
             "defines": [
                 "_DEBUG",
