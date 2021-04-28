@@ -18,7 +18,7 @@
             </helix:HelixViewport3D.Children>
 
         </helix:HelixViewport3D>
-        <Menu HorizontalAlignment="Left" Margin="0,0,0,735">
+        <Menu HorizontalAlignment="Left" Margin="0,0,0,800">
             <MenuItem Header="X Offset" MouseEnter="showTrans">
                 <TextBox Name="xOffsetInput" Width="50" Height="21.96" KeyUp="setTrans"></TextBox>
             </MenuItem>
@@ -46,10 +46,7 @@
             <MenuItem Header="Z Scale" MouseEnter="showScale">
                 <TextBox Name ="zScaleInput" Width="50" KeyUp="setScale"></TextBox>
             </MenuItem>
-            <Button Click="reset">Reset</Button>
             <Button Click="downToTable">Level</Button>
-            <Button Click="writeDataHandle">Extract Model Data</Button>
         </Menu>
+        <Button Click="reset" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="50">Reset</Button>
     </Grid>
-
-</UserControl>
