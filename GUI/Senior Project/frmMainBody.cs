@@ -145,9 +145,14 @@ namespace Senior_Project
                 foreach (string line in configDefaults)
                     outputFile.WriteLine(line);
             }
-
-
-
+            try
+            {
+                ((UserControl1)elementHost1.Child).writeData();
+            }
+            catch
+            {
+                MessageBox.Show("Try loading in an .stl file before exporting g-code.");
+            }
 
         }
 
