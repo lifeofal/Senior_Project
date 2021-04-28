@@ -22,15 +22,6 @@ namespace Senior_Project
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    /// CONTROLS
-    /// Use W/S to move the object away from/towards the camera
-    /// Use C/V to rotate
-    /// Use F to change rotation axis
-    /// Use Q/A to move object up/down
-    /// Use E/D to increse/decrease object size
-    /// Use Z to set object flat on table
-    /// Use B to reset the object 
-    /// Use Y to export model data
     public partial class UserControl1 : UserControl
     {
         //Path to the model file
@@ -141,9 +132,6 @@ namespace Senior_Project
         
         private void transform()
         {
-            Console.WriteLine("Translation: " + xOffset + " " + yOffset + " " + zOffset);
-            Console.WriteLine("Rotation: " + degreeX + " " + degreeY + " " + degreeZ);
-            Console.WriteLine("Scale: " + scaleX + " " + scaleY + " " + scaleZ);
             startPos = new Point3D(xMaxi / 2, yMaxi / 2, zLow);
             Transform3DGroup trans3dgroup = new Transform3DGroup();
             TranslateTransform3D trans = new TranslateTransform3D(startPos.X - centerPoint.X + xOffset, startPos.Y - centerPoint.Y + yOffset, startPos.Z - centerPoint.Z + zOffset);
@@ -151,7 +139,6 @@ namespace Senior_Project
             currentPosition.X += xOffset;
             currentPosition.Y += yOffset;
             currentPosition.Z += zOffset;
-            Console.WriteLine("current position: " + currentPosition.X + " " + currentPosition.Y + " " + currentPosition.Z);
             ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, currentPosition.X, currentPosition.Y, currentPosition.Z);
             RotateTransform3D rotX = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(-1, 0, 0), degreeX), currentPosition);
             RotateTransform3D rotY = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, -1, 0), degreeY), currentPosition);
@@ -253,7 +240,7 @@ namespace Senior_Project
         {
             writeData();   
         }
-        private async Task writeData()
+        public async Task writeData()
         {
             //If the object is not within the bounds of the table, generate error message
             if(!isInBounds(obj.Transform))
@@ -269,7 +256,6 @@ namespace Senior_Project
             Vector3D tempVec;
             double zHeight = 0;
             StreamWriter file = new StreamWriter("ModelData.txt");
-            MessageBox.Show("Writing data to file. Please close this message.");
             for (int i = 0; i < _3dPoints.Length; i++)
             {
                 tempPoint = obj.Transform.Transform(_3dPoints[i]);
@@ -285,8 +271,6 @@ namespace Senior_Project
                 }
             }
             await file.WriteLineAsync(zHeight.ToString());
-            MessageBox.Show("Writing complete.");
-
             file.Close();
         }
 
@@ -378,7 +362,6 @@ namespace Senior_Project
 
         private void downToTable(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("z offset is " + zOffset);
             Transform3DGroup trans3Dgroup = new Transform3DGroup();
             double zMin = getLowestZ();
             ScaleTransform3D scale = new ScaleTransform3D(scaleX, scaleY, scaleZ, currentPosition.X, currentPosition.Y, currentPosition.Z - zMin);
@@ -414,7 +397,6 @@ namespace Senior_Project
 
         private void showScale(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("show scale");
             xScaleInput.Text = scaleX.ToString();
             yScaleInput.Text = scaleY.ToString();
             zScaleInput.Text = scaleZ.ToString();
@@ -422,7 +404,6 @@ namespace Senior_Project
 
         private void showTrans(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("show trans");
             xOffsetInput.Text = xOffset.ToString();
             yOffsetInput.Text = yOffset.ToString();
             zOffsetInput.Text = zOffset.ToString();
@@ -431,7 +412,6 @@ namespace Senior_Project
 
         private void showRot(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("show rot");
             xRotInput.Text = degreeX.ToString();
             yRotInput.Text = degreeY.ToString();
             zRotInput.Text = degreeZ.ToString();
@@ -439,7 +419,6 @@ namespace Senior_Project
 
         private void setTrans(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("set trans");
             try
             {
                 xOffset = Convert.ToDouble(xOffsetInput.Text);
@@ -455,7 +434,6 @@ namespace Senior_Project
 
         private void setRot(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("set rot");
             try
             {
                 degreeX = Convert.ToInt32(xRotInput.Text);
@@ -482,5 +460,8 @@ namespace Senior_Project
             }
         }
     }
+}
+
+
 }
 
