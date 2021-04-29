@@ -7,15 +7,22 @@
 
 std::map<std::string, std::string> _settings;
 
-Settings::Settings(std::string PATH)
+Settings::Settings()
 {
-    // Use the PATH as input to set all global variables, else they will be default values
+    // Do nothing
+    _settings.clear();
+}
+
+void Settings::set_path(std::string PATH)
+{
+// Use the PATH as input to set all global variables, else they will be default values
     std::string line;
     std::ifstream _setting_f(PATH);
 
         // Runs for every line
     while(getline(_setting_f, line))
     {
+        // std::cout<<line<<std::endl;
             // If string contains # then skip
         if(line.find("#") != std::string::npos)
             continue;
@@ -31,10 +38,14 @@ Settings::Settings(std::string PATH)
             last = next + 1;
         }
         _settings.insert(std::pair<std::string, std::string>(_setting_id, _setting_val));
-        // cout << "ID: |" << _setting_id << "|\tVal: |" << _setting_val << "|" << endl;
+        // std::cout << "ID: |" << _setting_id << "|\tVal: |" << _setting_val << "|" << std::endl;
     }
-
     _setting_f.close();
+}
+
+Settings::~Settings()
+{
+    _settings.clear();
 }
 
 float Settings::f_get_setting(std::string key)
