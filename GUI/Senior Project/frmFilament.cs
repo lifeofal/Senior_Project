@@ -12,7 +12,7 @@ namespace Senior_Project
 {
     public partial class frmFilament : Form
     {
-        public frmFilament()
+        public frmFilament(frmSettings settings)
         {
             InitializeComponent();
         }

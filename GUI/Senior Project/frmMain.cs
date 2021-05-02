@@ -81,7 +81,7 @@ namespace Senior_Project
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmSettings().Show();
+            new frmSettings(this).Show();
         }
     }
 }

@@ -85,7 +85,7 @@
             this.MinimizeBox = false;
             this.Name = "frmOutput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmOutput";
+            this.Text = "GCode Output";
             this.ResumeLayout(false);
             this.PerformLayout();
 

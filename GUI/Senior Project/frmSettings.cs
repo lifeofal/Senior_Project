@@ -12,34 +12,30 @@ namespace Senior_Project
 {
     public partial class frmSettings : Form
     {
-        frmMainBody main;
+        frmMain main;
         public List<String> previousSettings;
         public List<String> defaultSettings;
+        public frmGeneral generalSettings;
         public List<Form> forms;
+
         public frmSettings()
         {
             InitializeComponent();
             int currentIndex = listBox1.SelectedIndex = 0;
+            forms = new List<Form>();
+            generalSettings = new frmGeneral();
             setMainPanelForm(currentIndex);
         }
 
-        public frmSettings(frmMainBody main)
+        public frmSettings(frmMain main)
         {
             InitializeComponent();
             this.main = main;
             int currentIndex = listBox1.SelectedIndex = 0;
-            createFormInstances();
-            setMainPanelForm(currentIndex);
-        }
-
-        public void createFormInstances()
-        {
             forms = new List<Form>();
-            
-            forms.Add(new frmGeneral() { TopLevel = false, TopMost = true });
-            forms.Add(new frmFilament() { TopLevel = false, TopMost = true });
-            forms.Add(new frmShortcuts() { TopLevel = false, TopMost = true });
-            forms.Add(new frmNotes() { TopLevel = false, TopMost = true });
+            generalSettings = new frmGeneral();
+            //createFormInstances();
+            setMainPanelForm(currentIndex);
         }
 
 
@@ -47,22 +43,22 @@ namespace Senior_Project
         {
             Form form = null;
 
+
             switch (formID)
             {
                 case 0: // General Settings Tab
-                    form = new frmGeneral() { TopLevel = false, TopMost = true };
+                    form = new frmGeneral() { TopLevel = false, TopMost = true } ;
                     break;
                 case 1: // Filament Tab
                     form = new frmFilament() { TopLevel = false, TopMost = true };
                     break;
-                case 2: 
+                case 2:
                     form = new frmShortcuts() { TopLevel = false, TopMost = true };
                     break;
-                case 3: 
+                case 3:
                     form = new frmNotes() { TopLevel = false, TopMost = true };
                     break;
             }
-
             form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;
             panBody.Controls.Clear(); //Clears Panel Before Placing New Form
@@ -89,6 +85,11 @@ namespace Senior_Project
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             setMainPanelForm(listBox1.SelectedIndex);
+        }
+
+        public void getData(List<String> data)
+        {
+            List<String> grabbedData = data;
         }
     }
 }
