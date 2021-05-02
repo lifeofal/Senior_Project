@@ -72,22 +72,16 @@
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createNewTabToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-<<<<<<< HEAD
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // generalToolStripMenuItem
             // 
-            this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
-            this.generalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.generalToolStripMenuItem.Text = "General";
-            this.generalToolStripMenuItem.Click += new System.EventHandler(this.generalToolStripMenuItem_Click);
-=======
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.settingsToolStripMenuItem.Text = "Tab Control";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
->>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
+
             // 
             // createNewTabToolStripMenuItem
             // 

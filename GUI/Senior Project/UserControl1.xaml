@@ -50,3 +50,4 @@
         </Menu>
         <Button Click="reset" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="50">Reset</Button>
     </Grid>
+</UserControl>

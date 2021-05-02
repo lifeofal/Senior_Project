@@ -38,17 +38,14 @@
             this.txtFilamentDensity = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-<<<<<<< HEAD
+
             this.panBottom = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panBottom.SuspendLayout();
-=======
             this.tableLayoutPanel1.SuspendLayout();
->>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
-            this.SuspendLayout();
             // 
             // label1
             // 
@@ -169,7 +166,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.14484F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(576, 359);
             this.tableLayoutPanel1.TabIndex = 9;
-<<<<<<< HEAD
             // 
             // panBottom
             // 
@@ -211,19 +207,15 @@
             this.button1.Text = "Reset";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-=======
->>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
             // 
             // frmFilament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(600, 480);
             this.Controls.Add(this.panBottom);
-=======
-            this.ClientSize = new System.Drawing.Size(600, 450);
->>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
+            //this.ClientSize = new System.Drawing.Size(600, 450);
+
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -231,10 +223,8 @@
             this.Text = "frmFilament";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-<<<<<<< HEAD
+
             this.panBottom.ResumeLayout(false);
-=======
->>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
             this.ResumeLayout(false);
 
         }
@@ -251,12 +241,9 @@
         private System.Windows.Forms.TextBox txtFilamentDensity;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-<<<<<<< HEAD
         private System.Windows.Forms.Panel panBottom;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button button1;
-=======
->>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
     }
 }

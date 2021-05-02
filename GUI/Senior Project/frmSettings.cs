@@ -15,25 +15,19 @@ namespace Senior_Project
         frmMain main;
         public List<String> previousSettings;
         public List<String> defaultSettings;
-<<<<<<< HEAD
         public frmGeneral generalSettings;
-        public List<Form> forms;
-
-=======
-
 
         Form currentForm;
 
         public List<Form> forms;
 
 
->>>>>>> 4302ec724cfecdb7905ed9eebacf508daf44dedb
         public frmSettings()
         {
             InitializeComponent();
             int currentIndex = listBox1.SelectedIndex = 0;
             forms = new List<Form>();
-            generalSettings = new frmGeneral();
+            generalSettings = new frmGeneral(this);
             setMainPanelForm(currentIndex);
         }
 
@@ -43,18 +37,14 @@ namespace Senior_Project
             this.main = main;
             int currentIndex = listBox1.SelectedIndex = 0;
             forms = new List<Form>();
-<<<<<<< HEAD
-            generalSettings = new frmGeneral();
+            generalSettings = new frmGeneral(this);
             //createFormInstances();
             setMainPanelForm(currentIndex);
-=======
-            
 
             forms.Add(new frmGeneral(this) { TopLevel = false, TopMost = true });
             forms.Add(new frmFilament(this) { TopLevel = false, TopMost = true });
             forms.Add(new frmShortcuts() { TopLevel = false, TopMost = true });
             forms.Add(new frmNotes(this) { TopLevel = false, TopMost = true });
->>>>>>> 4302ec724cfecdb7905ed9eebacf508daf44dedb
         }
 
 
@@ -66,11 +56,8 @@ namespace Senior_Project
             switch (formID)
             {
                 case 0: // General Settings Tab
-<<<<<<< HEAD
-                    form = new frmGeneral() { TopLevel = false, TopMost = true } ;
-=======
+                    //form = new frmGeneral() { TopLevel = false, TopMost = true } ;
                     form = new frmGeneral(this) { TopLevel = false, TopMost = true };
->>>>>>> 4302ec724cfecdb7905ed9eebacf508daf44dedb
                     break;
                 case 1: // Filament Tab
                     form = new frmFilament(this) { TopLevel = false, TopMost = true };
@@ -78,13 +65,8 @@ namespace Senior_Project
                 case 2:
                     form = new frmShortcuts() { TopLevel = false, TopMost = true };
                     break;
-<<<<<<< HEAD
-                case 3:
-                    form = new frmNotes() { TopLevel = false, TopMost = true };
-=======
                 case 3: 
                     form = new frmNotes(this) { TopLevel = false, TopMost = true };
->>>>>>> 4302ec724cfecdb7905ed9eebacf508daf44dedb
                     break;
             }
             form.FormBorderStyle = FormBorderStyle.None;
@@ -111,12 +93,7 @@ namespace Senior_Project
         {
             setMainPanelForm(listBox1.SelectedIndex);
         }
-<<<<<<< HEAD
 
-        public void getData(List<String> data)
-        {
-            List<String> grabbedData = data;
-=======
         public void getData(List<SettingsObject> list, int formIndex)
         {
             main.saveSettings(list, formIndex);
@@ -131,7 +108,6 @@ namespace Senior_Project
         private void frmSettings_Load(object sender, EventArgs e)
         {
 
->>>>>>> 4302ec724cfecdb7905ed9eebacf508daf44dedb
         }
     }
 }

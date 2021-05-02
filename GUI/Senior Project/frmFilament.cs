@@ -12,14 +12,10 @@ namespace Senior_Project
 {
     public partial class frmFilament : Form
     {
-<<<<<<< HEAD
-        public frmFilament(frmSettings settings)
-=======
         frmSettings mainSettings;
        
         int formIndex = 1;
         public frmFilament(frmSettings parent)
->>>>>>> 4302ec724cfecdb7905ed9eebacf508daf44dedb
         {
             InitializeComponent();
             mainSettings = parent;

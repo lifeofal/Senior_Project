@@ -30,15 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lstShortcuts = new System.Windows.Forms.CheckedListBox();
-<<<<<<< HEAD
-=======
             this.button1 = new System.Windows.Forms.Button();
             this.panBottom = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panBottom.SuspendLayout();
->>>>>>> 4302ec724cfecdb7905ed9eebacf508daf44dedb
             this.SuspendLayout();
             // 
             // label1
@@ -75,8 +72,6 @@
             this.lstShortcuts.TabIndex = 2;
             this.lstShortcuts.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
-<<<<<<< HEAD
-=======
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(418, 44);
@@ -126,17 +121,14 @@
             this.button3.Text = "Reset";
             this.button3.UseVisualStyleBackColor = true;
             // 
->>>>>>> 4302ec724cfecdb7905ed9eebacf508daf44dedb
             // frmShortcuts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 480);
-<<<<<<< HEAD
-=======
+
             this.Controls.Add(this.panBottom);
             this.Controls.Add(this.button1);
->>>>>>> 4302ec724cfecdb7905ed9eebacf508daf44dedb
             this.Controls.Add(this.lstShortcuts);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -151,13 +143,10 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox lstShortcuts;
-<<<<<<< HEAD
-=======
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panBottom;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button button3;
->>>>>>> 4302ec724cfecdb7905ed9eebacf508daf44dedb
     }
 }
