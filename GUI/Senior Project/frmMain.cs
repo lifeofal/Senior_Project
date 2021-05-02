@@ -6,6 +6,7 @@ namespace Senior_Project
 {
     public partial class frmMain : Form
     {
+
         public frmMain()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace Senior_Project
         /// Settings
         private void generalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Settings Form Should Pop Up Here");
+            Console.WriteLine("Settings tools");
         }
 
         /// Settings > Tabs
@@ -79,9 +80,19 @@ namespace Senior_Project
 
         }
 
+<<<<<<< HEAD
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+=======
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             new frmSettings(this).Show();
+=======
+            new frmSettings().Show();
+>>>>>>> ec7e53a76fcbae70adbf12b2348d531ac47e94dd
+>>>>>>> 4302ec724cfecdb7905ed9eebacf508daf44dedb
         }
     }
 }

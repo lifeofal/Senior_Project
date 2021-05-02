@@ -156,3 +156,44 @@ C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Pr
 C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmNotes.resources
 C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmPrint.resources
 C:\Users\Johnathon\Desktop\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmFilament.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\Senior Project.exe.config
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\Senior Project.exe
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\Senior Project.pdb
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\Ab3d.DXEngine.dll
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\HelixToolkit.dll
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\HelixToolkit.Wpf.dll
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Direct3D11.dll
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.dll
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.DXGI.dll
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Mathematics.dll
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\Ab3d.DXEngine.xml
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\HelixToolkit.xml
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\HelixToolkit.Wpf.xml
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.pdb
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Direct3D11.pdb
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Direct3D11.xml
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.DXGI.pdb
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.DXGI.xml
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Mathematics.pdb
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Mathematics.xml
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.csprojAssemblyReference.cache
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\UserControl1.baml
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\UserControl1.g.cs
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project_MarkupCompile.cache
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.g.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmFilament.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmGeneral.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmMain.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmMainBody.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmNotes.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmOutput.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmPrint.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmSettings.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmSettingsGeneral.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmShortcuts.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.Properties.Resources.resources
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.csproj.GenerateResource.cache
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.csproj.CoreCompileInputs.cache
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.csproj.CopyComplete
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.exe
+C:\Users\Alejandro\source\repos\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.pdb

@@ -18,11 +18,25 @@ namespace Senior_Project
         frmMain mainForm;
         //UserControl1 userControl;
         List<String> settings;
+        List<String> configDefaults;
+
+        Form openSettings;
+
+        //bool for if windows are already open
+        bool frmSettingsOpen = false;
+
+        List<SettingsObject>[] formSettings = new List<SettingsObject>[5];
+        //formSettings index in order: General, Filament, Notes, Print, Shortcuts
+
+
         public frmMainBody(frmMain form)
         {
             InitializeComponent();
             //userControl = new UserControl1();
             mainForm = form;
+            configDefaults = generateDefaultConfigFile();
+            openSettings = new frmSettings(this);
+
         }
 
         private void btnNewTab_Click(object sender, EventArgs e)
@@ -71,7 +85,22 @@ namespace Senior_Project
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Settings Form Should Pop Up Here");
+            if (openSettings.IsDisposed)
+            {
+                Console.WriteLine("Disposed");
+                openSettings = new frmSettings(this);
+              
+            }
+            openSettings.Show();
+            openSettings.BringToFront();
+            openSettings.Activate();
+            
+            
+        }
+
+        public void frmSettingsClosingBool()
+        {
+            frmSettingsOpen = false;
         }
 
         private void userControl2_Load(object sender, EventArgs e)
@@ -82,7 +111,19 @@ namespace Senior_Project
         private void btnExportGCode_Click(object sender, EventArgs e)
         {
             List<SettingsObject> settingsOutput = generateSettingsOutput();
-            List<String> configDefaults = generateDefaultConfigFile();
+            if(formSettings != null)
+            {
+                foreach(List<SettingsObject> x in formSettings)
+                {
+                    if (x != null)
+                    {
+                        foreach (SettingsObject y in x)
+                        {
+                            settingsOutput.Add(y);
+                        }
+                    }
+                }
+            }
 
             foreach(SettingsObject x in settingsOutput)
             {
@@ -92,6 +133,7 @@ namespace Senior_Project
                 {
                     configDefaults[indexFound] = configDefaults[indexFound] + " " + x.get_config_Value();
                 }
+                else { Console.WriteLine("Index not found for " + x.get_gSO()); }
                
             }
 
@@ -103,10 +145,20 @@ namespace Senior_Project
                 foreach (string line in configDefaults)
                     outputFile.WriteLine(line);
             }
+            try
+            {
+                ((UserControl1)elementHost1.Child).writeData();
+            }
+            catch
+            {
+                MessageBox.Show("Try loading in an .stl file before exporting g-code.");
+            }
 
+        }
 
-
-
+        private void advancedSettingsIO()
+        {
+            
         }
 
         private List<SettingsObject> generateSettingsOutput()
@@ -175,32 +227,46 @@ namespace Senior_Project
                 settings.Add("Bottom Infill Pattern : Default");
             }
             setList.Add(setObject);
+
+
             if (ddFillDens.SelectedItem != null)
             {
+                setObject = new SettingsObject("fill_density", ddFillDens.SelectedItem.ToString());
                 settings.Add("Fill Density : " + ddFillDens.SelectedItem.ToString());
             }
             else
             {
+                setObject = new SettingsObject("fill_density","");
                 settings.Add("Fill Density : Default");
             }
             settings.Add("Fill Gaps : " + cbGaps.Checked.ToString());
+            setList.Add(setObject);
+
+
             if (ddFillPattern.SelectedItem != null)
             {
+                setObject = new SettingsObject("fill_pattern", ddFillPattern.SelectedItem.ToString());
                 settings.Add("Fill Pattern : " + ddFillPattern.SelectedItem.ToString());
             }
             else
             {
+                setObject = new SettingsObject("fill_pattern", "");
                 settings.Add("Fill Pattern : Default");
             }
             settings.Add("Infill before Perimeters : " + cbInitalBeforePerim.Checked.ToString());
+            setList.Add(setObject);
+
             if (ddTopInfill.SelectedItem != null)
             {
+                setObject = new SettingsObject("top_infill_pattern", ddTopInfill.SelectedItem.ToString());
                 settings.Add("Top Infill Pattern : " + ddTopInfill.SelectedItem.ToString());
             }
             else
             {
+                setObject = new SettingsObject("top_infill_pattern","");
                 settings.Add("Top Infill Pattern : Default");
             }
+            setList.Add(setObject);
 
             //Layers and Perimeters
             settings.Add("External Perimeters First : " + cbExternalPerims.Checked.ToString());
@@ -217,9 +283,9 @@ namespace Senior_Project
 
         private List<String> generateDefaultConfigFile()
         {
-            string winDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"config_default.txt");
+            
             //Reader
-            StreamReader config = new StreamReader(winDir);
+            StreamReader config = new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"config_default.txt"));
 
             List<String> settings = new List<string>();
             try
@@ -287,14 +353,19 @@ namespace Senior_Project
 
         }
 
-        public void saveSettings(List<String> data)
+        public void saveSettings(List<SettingsObject> data, int formIndex)
         {
-            settings = data;
+            formSettings[formIndex] = data;
         }
         
         public List<String> getSettings()
         {
             return settings;
+        }
+        public List<SettingsObject> returnAdvSettings(int formIndex)
+        {
+            List<SettingsObject> obj = formSettings[formIndex];
+            return obj;
         }
     }
 }
