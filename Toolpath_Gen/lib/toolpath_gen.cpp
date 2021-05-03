@@ -92,8 +92,8 @@ bool Generator::checkFanSetting()
 std::string Generator::travel(dot d)
 {
     std::stringstream output;
-    output << "\nG1 E-" << config.s_get_setting("retract_length") <<  " F" << (config.f_get_setting("retract_speed") * 60);
     output << "\nG92 E0";
+    output << "\nG1 E-" << config.s_get_setting("retract_length") <<  " F" << (config.f_get_setting("retract_speed") * 60);
     output << "\nG1 X" << d.x << " Y" << d.y << " F" << (config.f_get_setting("travel_speed")*60);
     output << "\nG1 E" << config.s_get_setting("retract_length") << " F" << (config.f_get_setting("retract_speed") * 60);
     output << "\nG1 F" << (config.f_get_setting("perimeter_speed")*60);
