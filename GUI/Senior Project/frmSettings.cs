@@ -12,12 +12,12 @@ namespace Senior_Project
 {
     public partial class frmSettings : Form
     {
-        frmMain main;
+        frmMainBody main;
         public List<String> previousSettings;
         public List<String> defaultSettings;
         public frmGeneral generalSettings;
 
-        Form currentForm;
+        frmMainBody currentForm;
 
         public List<Form> forms;
 
@@ -31,7 +31,7 @@ namespace Senior_Project
             setMainPanelForm(currentIndex);
         }
 
-        public frmSettings(frmMain main)
+        public frmSettings(frmMainBody main)
         {
             InitializeComponent();
             this.main = main;

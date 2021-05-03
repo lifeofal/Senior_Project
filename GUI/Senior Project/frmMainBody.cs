@@ -20,7 +20,7 @@ namespace Senior_Project
         List<String> settings;
         List<String> configDefaults;
 
-        Form openSettings;
+        frmSettings openSettings;
 
         //bool for if windows are already open
         bool frmSettingsOpen = false;
