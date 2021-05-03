@@ -121,7 +121,7 @@ void Generator::close_File()
     gcode << "\n\nM104 S0"; //set extruder temp to 0
     gcode << "\nG28 X0"; // home x axis
     gcode << "\nM84"; // disable all motors
-    gcode << "\nM140 S0"; //set bed temp to 0
+    gcode << "\n" << config.s_get_setting("end_gcode");
 
     gcode.close();
 }
