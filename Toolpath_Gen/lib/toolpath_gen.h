@@ -16,17 +16,17 @@ class Generator
         std::string turnFanOn();
         bool checkFanSetting();
         std::string travel(dot d);
-        std::string out_path;
+        std::string out_path, file_name;
         Settings config;
 
     public:
-        Generator(std::string PATH);
+        Generator(std::string path);
         void open_File();
         void close_File();
         void print_XYE(Layer layer);
         void init_settings(std::string PATH);
         float get_extLength(dot a, dot b);
-        std::string test_travel(dot a);
+
 };
 
 #endif

@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "C:\Users\jones\Desktop\Senior_Project-Toolpath_Generation\Toolpath_Gen\src\toolpath_gen.h"
-#include "C:\Users\jones\Desktop\Senior_Project-Toolpath_Generation\Toolpath_Gen\src\toolpath_gen.cpp"
+#include "../lib/toolpath_gen.cpp"
 
 using namespace std;
 
