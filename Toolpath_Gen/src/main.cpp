@@ -1,33 +1,44 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "..\lib\toolpath_gen.h"
 #include "..\lib\toolpath_gen.cpp"
 
 using namespace std;
 
-double * slice(double point1X, double point1Y, double point1Z, 
+double ** slice(double point1X, double point1Y, double point1Z, 
 	double point2X, double point2Y, double point2Z, 
 	double point3X, double point3Y, double point3Z, 
 	double currentzHeight);
 
-double getMaxZ(int &trigs);
+float getMaxZ(int &trigs);
 
-double getZIncrement();
 
-int main() {
+int main() {	
+	int trigs;
+	float maxZ = getMaxZ(trigs);
+	
+	Settings forZHeight;
+	forZHeight.set_path("../resource/config.ini");
+	float currentZheight = forZHeight.f_get_setting("layer_height");
+	float zIncrementer = currentZheight;
+	cout << currentZheight;
+
+	double** endpoints = 0;
+	endpoints = new double* [trigs];
+	for (int i = 0; i < trigs; i++) {
+		endpoints[i] = new double[2];
+	}
+	int last = 0;
+
 	fstream TrigData;
 	double point1x, point1y, point1z, point2x, point2y, point2z, point3x, point3y, point3z;
-	string conversion; 
-	int trigs;
-	double maxZ = getMaxZ(trigs);
-	double currentZheight = getZIncrement();
-	double zIncrementer = getZIncrement();
-	double* endpoints = new double[trigs * 3];
-	int last = 0;
+	string conversion;
+	Generator makesGCode("../resource");
+	makesGCode.open_File();
+	Layer layer;
 	
 	while (currentZheight < maxZ) {
-		TrigData.open("ModelData.txt", ios::in);
+		TrigData.open("../resource/ModelData.txt", ios::in);
 		while (!TrigData.eof()) {
 			TrigData >> conversion;
 			point1x = stod(conversion);
@@ -50,13 +61,8 @@ int main() {
 			TrigData >> conversion;
 			point3z = stod(conversion);
 
-			double *recentEnpoints = slice(point1x, point1y, point1z, point2x, point2y, point2z, point3x, point3y, point3z, 0.01);
-			if (recentEnpoints != NULL) {
-				for (int i = 0; i < 3; i++) {
-					endpoints[last] = recentEnpoints[i];
-					last++;
-				}
-			}
+			double **recentEnpoints = slice(point1x, point1y, point1z, point2x, point2y, point2z, point3x, point3y, point3z, 0.01);
+			//add recentendpoints array to all endpoints array
 
 
 			TrigData >> conversion;
@@ -64,24 +70,14 @@ int main() {
 			TrigData >> conversion;
 			TrigData >> conversion;
 		}
-		//here is where the sort will need to be called. then it will need to b pushed into a layer and the layer will need to be written to gcode.
+		//here is where the sort will need to be called on the all endpoints array. 
+		//here is where I will push the results of the sort to a group of perimeters
+		//here is where I will push those perimeters to a layer
+
 		TrigData.close();
 		currentZheight += zIncrementer;
 	}
-	/*
-	double zHeight = -19.8;
-	int numOfHeights = 1;
-	double point1[3] = { 0.0, 0.0, -20.0 };
-	double point2[3] = { 10.0, 10.0, -10.0 };
-	double point3[3] = { 20.0, 0.0, -20.0 };
-	double* normal = NULL;
-	Triangle *test = new Triangle(point1, point2, point3, normal);
-	
-	double * endpoints = slice(0.0, 0.0, -20.0, 10.0, 10.0, -10.0, 20.0, 0.0, -20.0, zHeight);
-	for (int i = 0; i < 6; i++) {
-		cout << endpoints[i] << ", ";
-		cout << endl;
-	}*/
+
 
 
 
@@ -94,7 +90,7 @@ be made up of "perimeter" objects. The perimeter objects are made of dot objects
 
 
 
-double * slice(double point1X, double point1Y, double point1Z,
+double ** slice(double point1X, double point1Y, double point1Z,
 	double point2X, double point2Y, double point2Z,
 	double point3X, double point3Y, double point3Z,
 	double currentZHeight) {
@@ -178,9 +174,17 @@ double * slice(double point1X, double point1Y, double point1Z,
 			y2 = point2[1] + (t * (point3[1] - point2[1]));
 			z2 = currentZHeight;
 		}
+		
+		double** output = 0;
+		output = new double* [2];
+		output[0] = new double[2];
+		output[1] = new double[2];
+		output[0][0] = x1;
+		output[0][1] = y1;
+		output[1][0] = x2;
+		output[1][1] = y2;
 
-		double intersectionPoints[6] = { x1,y1,z1,x2,y2,z2 };
-		return intersectionPoints;
+		return output;
 
 	}
 
@@ -188,36 +192,17 @@ double * slice(double point1X, double point1Y, double point1Z,
 
 }
 
-double getZIncrement() {
-	fstream forZIncrement;
-	forZIncrement.open("config.ini", ios::in);
-	string conversion;
-	double z;
 
-	while (1) {
-		forZIncrement >> conversion;
-		if (conversion == "layer_height") {
-			break;
-		}
-	}
-	forZIncrement >> conversion;
-	forZIncrement >> conversion;
-	z = stod(conversion);
-	return z;
-
-}
-
-
-double getMaxZ(int &trigs) {
+float getMaxZ(int &trigs) {
 	fstream forMax;
-	forMax.open("ModelData.txt", ios::in);
+	forMax.open("../resource/ModelData.txt", ios::in);
 	string conversion;
-	double max;
+	float max;
 	while (!forMax.eof()) {
 		trigs++;
 		forMax >> conversion;
 	}
-	max = stod(conversion);
+	max = stof(conversion);
 
 	trigs--;
 	trigs = trigs / 4;
