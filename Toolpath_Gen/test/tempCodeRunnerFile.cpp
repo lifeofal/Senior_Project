@@ -37,7 +37,7 @@ int main()
     //     m.pop();
     // }
 
-    Generator g1("../settings/config.ini");
+    Generator g1("../resource/");
 
     g1.open_File();
     while(!m.empty())

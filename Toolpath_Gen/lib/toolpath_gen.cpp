@@ -14,16 +14,15 @@
 Generator::Generator(std::string path) 
 {
     Settings temp;
-    // cout<<"Made temp";
-    temp.set_path(path);
+    temp.set_path("../resource/config.ini");
     config = temp;
+    file_name = path += config.s_get_setting("output_filename_format");
     // temp.~Settings();
 }
 
 void Generator::open_File() 
 {
-    out_path = config.s_get_setting("output_filename_format");          // += ".gcode"
-    ofstream gcode(config.s_get_setting("output_filename_format"));
+    ofstream gcode(file_name);
     
     if (checkFanSetting())                                                                      //check if fan should always be on
         gcode << "M107" << endl;
@@ -46,7 +45,7 @@ void Generator::print_XYE(Layer _l)
     // cout<<"Big Layer Size: ";
     // _l.printSize();
     ofstream gcode;
-    gcode.open(out_path, ios_base::app);
+    gcode.open(file_name, ios_base::app);
     while(!layer.isEmpty())
     {
         
@@ -115,7 +114,7 @@ float Generator::get_extLength(dot a, dot b)
 void Generator::close_File()
 {
     ofstream gcode;
-    gcode.open(out_path, ios_base::app);
+    gcode.open(file_name, ios_base::app);
     gcode << "\nG92 E0"; //set extruder to 0
     gcode << "\n; Filament specific end gcode";
     gcode << "\n; End gcode for filament";
