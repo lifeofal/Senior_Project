@@ -36,18 +36,16 @@
             this.btnResetSTL = new System.Windows.Forms.Button();
             this.btnLoadSTL = new System.Windows.Forms.Button();
             this.pan3DModelArea = new System.Windows.Forms.Panel();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.userControl1 = new System.Windows.Forms.UserControl();
             this.panSideBar = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.ddPrintSettings = new System.Windows.Forms.ComboBox();
-            this.btnPrintSettings = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ddFilament = new System.Windows.Forms.ComboBox();
             this.ddPrinter = new System.Windows.Forms.ComboBox();
-            this.btnFilamentSettings = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnPrinterSettings = new System.Windows.Forms.Button();
             this.btnExportGCode = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -116,7 +114,7 @@
             this.panModifier.Dock = System.Windows.Forms.DockStyle.Top;
             this.panModifier.Location = new System.Drawing.Point(0, 0);
             this.panModifier.Name = "panModifier";
-            this.panModifier.Size = new System.Drawing.Size(1182, 34);
+            this.panModifier.Size = new System.Drawing.Size(1280, 34);
             this.panModifier.TabIndex = 1;
             // 
             // panel1
@@ -180,12 +178,24 @@
             // pan3DModelArea
             // 
             this.pan3DModelArea.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pan3DModelArea.Controls.Add(this.elementHost1);
             this.pan3DModelArea.Controls.Add(this.userControl1);
             this.pan3DModelArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan3DModelArea.Location = new System.Drawing.Point(0, 34);
             this.pan3DModelArea.Name = "pan3DModelArea";
-            this.pan3DModelArea.Size = new System.Drawing.Size(859, 618);
+            this.pan3DModelArea.Size = new System.Drawing.Size(957, 686);
             this.pan3DModelArea.TabIndex = 3;
+            // 
+            // elementHost1
+            // 
+            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elementHost1.Location = new System.Drawing.Point(0, 0);
+            this.elementHost1.Margin = new System.Windows.Forms.Padding(1);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(957, 686);
+            this.elementHost1.TabIndex = 2;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = null;
             // 
             // userControl1
             // 
@@ -202,26 +212,22 @@
             this.panSideBar.Controls.Add(this.groupBox2);
             this.panSideBar.Controls.Add(this.groupBox1);
             this.panSideBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panSideBar.Location = new System.Drawing.Point(859, 34);
+            this.panSideBar.Location = new System.Drawing.Point(957, 34);
             this.panSideBar.Name = "panSideBar";
-            this.panSideBar.Size = new System.Drawing.Size(323, 618);
+            this.panSideBar.Size = new System.Drawing.Size(323, 686);
             this.panSideBar.TabIndex = 4;
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.73771F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.14754F));
             this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.ddPrintSettings, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnPrintSettings, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.ddFilament, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.ddPrinter, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.btnFilamentSettings, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.btnPrinterSettings, 2, 2);
             this.tableLayoutPanel4.Controls.Add(this.btnExportGCode, 1, 3);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(9, 6);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -239,7 +245,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 25);
+            this.label1.Size = new System.Drawing.Size(108, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Print Settings:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -248,23 +254,12 @@
             // 
             this.ddPrintSettings.FormattingEnabled = true;
             this.ddPrintSettings.Items.AddRange(new object[] {
-            "Test"});
-            this.ddPrintSettings.Location = new System.Drawing.Point(104, 3);
+            "- Default -"});
+            this.ddPrintSettings.Location = new System.Drawing.Point(117, 3);
             this.ddPrintSettings.Name = "ddPrintSettings";
-            this.ddPrintSettings.Size = new System.Drawing.Size(163, 21);
+            this.ddPrintSettings.Size = new System.Drawing.Size(185, 21);
             this.ddPrintSettings.TabIndex = 1;
-            this.ddPrintSettings.Text = "ddPrintGettings";
-            // 
-            // btnPrintSettings
-            // 
-            this.btnPrintSettings.FlatAppearance.BorderSize = 0;
-            this.btnPrintSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintSettings.Image = global::Senior_Project.Properties.Resources.config20x20;
-            this.btnPrintSettings.Location = new System.Drawing.Point(273, 3);
-            this.btnPrintSettings.Name = "btnPrintSettings";
-            this.btnPrintSettings.Size = new System.Drawing.Size(22, 19);
-            this.btnPrintSettings.TabIndex = 2;
-            this.btnPrintSettings.UseVisualStyleBackColor = true;
+            this.ddPrintSettings.Text = "- Default -";
             // 
             // label2
             // 
@@ -272,7 +267,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.Size = new System.Drawing.Size(108, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Filament :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -281,34 +276,23 @@
             // 
             this.ddFilament.FormattingEnabled = true;
             this.ddFilament.Items.AddRange(new object[] {
-            "test"});
-            this.ddFilament.Location = new System.Drawing.Point(104, 28);
+            "- Default -"});
+            this.ddFilament.Location = new System.Drawing.Point(117, 28);
             this.ddFilament.Name = "ddFilament";
-            this.ddFilament.Size = new System.Drawing.Size(163, 21);
+            this.ddFilament.Size = new System.Drawing.Size(185, 21);
             this.ddFilament.TabIndex = 1;
-            this.ddFilament.Text = "ddFilament";
+            this.ddFilament.Text = "- Default - ";
             // 
             // ddPrinter
             // 
             this.ddPrinter.FormattingEnabled = true;
             this.ddPrinter.Items.AddRange(new object[] {
-            "test"});
-            this.ddPrinter.Location = new System.Drawing.Point(104, 53);
+            "- Default -"});
+            this.ddPrinter.Location = new System.Drawing.Point(117, 53);
             this.ddPrinter.Name = "ddPrinter";
-            this.ddPrinter.Size = new System.Drawing.Size(163, 21);
+            this.ddPrinter.Size = new System.Drawing.Size(185, 21);
             this.ddPrinter.TabIndex = 1;
-            this.ddPrinter.Text = "ddPrinter";
-            // 
-            // btnFilamentSettings
-            // 
-            this.btnFilamentSettings.FlatAppearance.BorderSize = 0;
-            this.btnFilamentSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilamentSettings.Image = global::Senior_Project.Properties.Resources.config20x20;
-            this.btnFilamentSettings.Location = new System.Drawing.Point(273, 28);
-            this.btnFilamentSettings.Name = "btnFilamentSettings";
-            this.btnFilamentSettings.Size = new System.Drawing.Size(22, 19);
-            this.btnFilamentSettings.TabIndex = 2;
-            this.btnFilamentSettings.UseVisualStyleBackColor = true;
+            this.ddPrinter.Text = "- Default -";
             // 
             // label3
             // 
@@ -316,26 +300,15 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 25);
+            this.label3.Size = new System.Drawing.Size(108, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Printer :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnPrinterSettings
-            // 
-            this.btnPrinterSettings.FlatAppearance.BorderSize = 0;
-            this.btnPrinterSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrinterSettings.Image = global::Senior_Project.Properties.Resources.config20x20;
-            this.btnPrinterSettings.Location = new System.Drawing.Point(273, 53);
-            this.btnPrinterSettings.Name = "btnPrinterSettings";
-            this.btnPrinterSettings.Size = new System.Drawing.Size(22, 19);
-            this.btnPrinterSettings.TabIndex = 2;
-            this.btnPrinterSettings.UseVisualStyleBackColor = true;
-            // 
             // btnExportGCode
             // 
             this.btnExportGCode.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExportGCode.Location = new System.Drawing.Point(180, 78);
+            this.btnExportGCode.Location = new System.Drawing.Point(215, 78);
             this.btnExportGCode.Name = "btnExportGCode";
             this.btnExportGCode.Size = new System.Drawing.Size(87, 19);
             this.btnExportGCode.TabIndex = 3;
@@ -433,7 +406,7 @@
             this.txtLayer.Name = "txtLayer";
             this.txtLayer.Size = new System.Drawing.Size(100, 20);
             this.txtLayer.TabIndex = 9;
-            this.txtLayer.Text = "txtLayer";
+            this.txtLayer.Text = "0";
             // 
             // label12
             // 
@@ -453,7 +426,6 @@
             this.cbExternalPerims.Name = "cbExternalPerims";
             this.cbExternalPerims.Size = new System.Drawing.Size(123, 19);
             this.cbExternalPerims.TabIndex = 1;
-            this.cbExternalPerims.Text = "cbExternalPerims";
             this.cbExternalPerims.UseVisualStyleBackColor = true;
             // 
             // label13
@@ -507,7 +479,6 @@
             this.cbSpiral.Name = "cbSpiral";
             this.cbSpiral.Size = new System.Drawing.Size(123, 21);
             this.cbSpiral.TabIndex = 6;
-            this.cbSpiral.Text = "cbSpiral";
             this.cbSpiral.UseVisualStyleBackColor = true;
             // 
             // panel3
@@ -536,7 +507,7 @@
             this.txtFirstLayer.Name = "txtFirstLayer";
             this.txtFirstLayer.Size = new System.Drawing.Size(100, 20);
             this.txtFirstLayer.TabIndex = 8;
-            this.txtFirstLayer.Text = "txtFirstLayer";
+            this.txtFirstLayer.Text = "0";
             // 
             // groupBox2
             // 
@@ -582,12 +553,14 @@
             this.ddTopInfill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ddTopInfill.FormattingEnabled = true;
             this.ddTopInfill.Items.AddRange(new object[] {
-            "test"});
+            "Rectilinear",
+            "Concentric",
+            "Hilbert Curve"});
             this.ddTopInfill.Location = new System.Drawing.Point(159, 148);
             this.ddTopInfill.Name = "ddTopInfill";
             this.ddTopInfill.Size = new System.Drawing.Size(129, 21);
             this.ddTopInfill.TabIndex = 1;
-            this.ddTopInfill.Text = "ddTopInfill";
+            this.ddTopInfill.Text = "Rectilinear";
             // 
             // cbInitalBeforePerim
             // 
@@ -597,7 +570,6 @@
             this.cbInitalBeforePerim.Name = "cbInitalBeforePerim";
             this.cbInitalBeforePerim.Size = new System.Drawing.Size(129, 23);
             this.cbInitalBeforePerim.TabIndex = 2;
-            this.cbInitalBeforePerim.Text = "cbInitalBeforePerim";
             this.cbInitalBeforePerim.UseVisualStyleBackColor = true;
             // 
             // label11
@@ -630,7 +602,6 @@
             this.cbGaps.Name = "cbGaps";
             this.cbGaps.Size = new System.Drawing.Size(129, 23);
             this.cbGaps.TabIndex = 2;
-            this.cbGaps.Text = "cbGaps";
             this.cbGaps.UseVisualStyleBackColor = true;
             // 
             // ddFillPattern
@@ -638,12 +609,16 @@
             this.ddFillPattern.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ddFillPattern.FormattingEnabled = true;
             this.ddFillPattern.Items.AddRange(new object[] {
-            "test"});
+            "Rectinliear",
+            "Aligned Rectilinear",
+            "Grid",
+            "Cubic",
+            "Concentric"});
             this.ddFillPattern.Location = new System.Drawing.Point(159, 90);
             this.ddFillPattern.Name = "ddFillPattern";
             this.ddFillPattern.Size = new System.Drawing.Size(129, 21);
             this.ddFillPattern.TabIndex = 1;
-            this.ddFillPattern.Text = "ddFillPattern";
+            this.ddFillPattern.Text = "Rectilinear";
             // 
             // label10
             // 
@@ -661,12 +636,14 @@
             this.ddBottomInfill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ddBottomInfill.FormattingEnabled = true;
             this.ddBottomInfill.Items.AddRange(new object[] {
-            "test"});
+            "Rectinliear",
+            "Concentric",
+            "Hilbert Curve"});
             this.ddBottomInfill.Location = new System.Drawing.Point(159, 3);
             this.ddBottomInfill.Name = "ddBottomInfill";
             this.ddBottomInfill.Size = new System.Drawing.Size(129, 21);
             this.ddBottomInfill.TabIndex = 1;
-            this.ddBottomInfill.Text = "ddBottomInfill";
+            this.ddBottomInfill.Text = "Rectilinear";
             // 
             // label7
             // 
@@ -684,12 +661,17 @@
             this.ddFillDens.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ddFillDens.FormattingEnabled = true;
             this.ddFillDens.Items.AddRange(new object[] {
-            "test"});
+            "0%",
+            "20%",
+            "40%",
+            "60%",
+            "80%",
+            "100%"});
             this.ddFillDens.Location = new System.Drawing.Point(159, 32);
             this.ddFillDens.Name = "ddFillDens";
             this.ddFillDens.Size = new System.Drawing.Size(129, 21);
             this.ddFillDens.TabIndex = 1;
-            this.ddFillDens.Text = "ddFillDens";
+            this.ddFillDens.Text = "0%";
             // 
             // label9
             // 
@@ -754,7 +736,7 @@
             this.panel6.Controls.Add(this.txtSizeComp);
             this.panel6.Location = new System.Drawing.Point(159, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(129, 18);
+            this.panel6.Size = new System.Drawing.Size(128, 18);
             this.panel6.TabIndex = 1;
             // 
             // label5
@@ -774,13 +756,14 @@
             this.txtSizeComp.Name = "txtSizeComp";
             this.txtSizeComp.Size = new System.Drawing.Size(90, 20);
             this.txtSizeComp.TabIndex = 1;
-            this.txtSizeComp.Text = "txtSizeComp";
+            this.txtSizeComp.Text = "0";
+            this.txtSizeComp.TextChanged += new System.EventHandler(this.txtSizeComp_TextChanged);
             // 
             // frmMainBody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 652);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.pan3DModelArea);
             this.Controls.Add(this.panSideBar);
             this.Controls.Add(this.panModifier);
@@ -821,13 +804,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ddPrintSettings;
-        private System.Windows.Forms.Button btnPrintSettings;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ddFilament;
         private System.Windows.Forms.ComboBox ddPrinter;
-        private System.Windows.Forms.Button btnFilamentSettings;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnPrinterSettings;
         private System.Windows.Forms.Button btnExportGCode;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -871,5 +851,6 @@
         private System.Windows.Forms.Button btnCloseTab;
         private System.Windows.Forms.Button btnNewTab;
         private System.Windows.Forms.UserControl userControl1;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
     }
 }

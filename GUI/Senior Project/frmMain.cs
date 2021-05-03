@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Senior_Project
 {
     public partial class frmMain : Form
     {
+
         public frmMain()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace Senior_Project
         /// Settings
         private void generalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Settings Form Should Pop Up Here");
+            Console.WriteLine("Settings tools");
         }
 
         /// Settings > Tabs
@@ -45,7 +47,7 @@ namespace Senior_Project
         public void createTabbedPages()
         {
             int tabCount = tabController.TabCount;
-            tabController.TabPages.Add("New : " + tabCount);
+            tabController.TabPages.Add("New : untitled");
             TabPage page = tabController.TabPages[tabCount];
 
             Panel centerPanel = new Panel();
@@ -60,12 +62,30 @@ namespace Senior_Project
         public void removeCurrentPage()
         {
             tabController.TabPages.RemoveAt(tabController.SelectedIndex);
+
+            if (tabController.TabCount == 0)
+            {
+                createTabbedPages();
+            }
         }
 
         public void renameCurrentTab(String name)
         {
             TabPage currentPage = tabController.TabPages[tabController.SelectedIndex];
             currentPage.Text = name;
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            //new frmSettings(this).Show();
+
+            new frmSettings().Show();
         }
     }
 }
