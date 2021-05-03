@@ -3,12 +3,12 @@
 
 #include <fstream>
 #include <iostream>
-#include "../lib/toolpath_settings.h"
-#include "../lib/toolpath_settings.cpp"
-#include "../lib/perimeter.h"
-#include "../lib/perimeter.cpp"
-#include "../lib/layer.h"
-#include "../lib/layer.cpp"
+#include "toolpath_settings.h"
+#include "toolpath_settings.cpp"
+#include "perimeter.h"
+#include "perimeter.cpp"
+#include "layer.h"
+#include "layer.cpp"
 
 class Generator
 {

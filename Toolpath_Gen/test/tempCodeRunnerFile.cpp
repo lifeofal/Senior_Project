@@ -5,8 +5,8 @@
 #include <iterator>
 #include <map>
 #include <queue>
-#include "../src/toolpath_gen.h"
-#include "../src/toolpath_gen.cpp"
+#include "../lib/toolpath_gen.h"
+#include "../lib/toolpath_gen.cpp"
 
 using namespace std;
 
