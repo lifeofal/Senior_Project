@@ -54,7 +54,7 @@ void main_slice(char* output_path) {
 	makesGCode.open_File();
 	Layer layer;
 	while (currentZheight < maxZ) {
-		cout<<"currentz: "<<currentZheight<<"\t"<<maxZ<<"\t"<<zIncrementer<<endl;
+		// cout<<"currentz: "<<currentZheight<<"\t"<<maxZ<<"\t"<<zIncrementer<<endl;
 		TrigData.open("../resource/ModelData.txt", ios::in);
 		while (!TrigData.eof()) {
 			TrigData >> conversion;
@@ -104,7 +104,7 @@ void main_slice(char* output_path) {
 			}
 		}
 		//here is where the sort will need to be called on the lines vector. It will output a layer.
-		my_lines.showV();
+		// my_lines.showV();
 		layer = my_lines.sort();
 		// cout<<"Got here finally"<<endl;
 		layer.insertZ(currentZheight);
