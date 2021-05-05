@@ -16,11 +16,11 @@ class Generator
         Settings config;
 
     public:
-        Generator(std::string path);
+        Generator(char *path);
         void open_File();
         void close_File();
         void print_XYE(Layer layer);
-        void init_settings(std::string PATH);
+        // void init_settings(char *PATH);
         float get_extLength(dot a, dot b);
 
 };

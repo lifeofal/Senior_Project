@@ -44,14 +44,14 @@ Layer Lines::sort()
         data.erase(data.begin());   // Erase first line of line vector
         while(p1.get_front() != p1.back()) // while the front of Perimeter doesn't match the back, AKA while the Perimeter is not a loop
         {
-            cout<<"Perimeter F&B:\t"<<p1.get_front().x<<", "<<p1.get_front().y<<"\t"<<p1.back().x<<","<<p1.back().y<<endl;
+            // cout<<"Perimeter F&B:\t"<<p1.get_front().x<<", "<<p1.get_front().y<<"\t"<<p1.back().x<<","<<p1.back().y<<endl;
             vector<line>::iterator itr = data.begin();
             while(itr != data.end())
             {
                 // cout<<"\nIterator: "<<itr->print();
-                showV();
-                cout <<"itr val: "<<itr->print();
-                cout <<"itr == xy: "<< (p1.back() == itr->xy1 || p1.back() == itr->xy2)<<endl;
+                // showV();
+                // cout <<"itr val: "<<itr->print();
+                // cout <<"itr == xy: "<< (p1.back() == itr->xy1 || p1.back() == itr->xy2)<<endl;
                 if(p1.back() == itr->xy1)
                 {
                     p1.insert(itr->xy2);

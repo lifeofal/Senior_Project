@@ -11,12 +11,13 @@
 
 // Settings config("../settings/config.ini");
 
-Generator::Generator(std::string path) 
+Generator::Generator(char *path) 
 {
-    Settings temp;
-    temp.set_path("../resource/config.ini");
-    config = temp;
-    file_name = path += config.s_get_setting("output_filename_format");
+    Settings temp_config;
+    std::string temp_path(path);
+    temp_config.set_path("../resource/config.ini");
+    config = temp_config;
+    file_name = temp_path += config.s_get_setting("output_filename_format");
     // temp.~Settings();
 }
 

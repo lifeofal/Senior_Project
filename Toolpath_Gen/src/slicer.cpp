@@ -16,14 +16,26 @@ bool notFlat(float vx, float vy, float vz);
 
 float getMaxZ();
 
-void main_slice(string output_path);
+void main_slice(char* output_path);
 
-int main()
+int main(int argc, char *argv[])
 {
-	main_slice("../resource/");
+	cout << argv[1] << endl;
+	main_slice(argv[1]);
+	// cout << argv[1] << "\t" << argv[2];
 }
 
-void main_slice(string output_path) {
+void main_slice(char* output_path) {
+	// string outputPath = "";
+	// for(int i = 0; i < pathSize; i++)
+	// {
+	// 	if(output_path[i] == '\\')
+	// 		outputPath += '/';
+	// 	else
+	// 		outputPath += output_path[i];
+	// }
+	// outputPath += '/';
+
 	float maxZ = getMaxZ();
 	
 	Settings forZHeight;
@@ -42,7 +54,7 @@ void main_slice(string output_path) {
 	makesGCode.open_File();
 	Layer layer;
 	while (currentZheight < maxZ) {
-		// cout<<"currentz: "<<currentZheight<<"\t"<<maxZ<<"\t"<<zIncrementer<<endl;
+		cout<<"currentz: "<<currentZheight<<"\t"<<maxZ<<"\t"<<zIncrementer<<endl;
 		TrigData.open("../resource/ModelData.txt", ios::in);
 		while (!TrigData.eof()) {
 			TrigData >> conversion;
@@ -105,7 +117,7 @@ void main_slice(string output_path) {
 
 	makesGCode.close_File();
 
-
+	cout << output_path << endl;
 }
 
 
