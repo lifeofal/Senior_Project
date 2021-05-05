@@ -1,7 +1,7 @@
 #ifndef LAYER_H
 #define LAYER_H
 
-#include "perimeter.h"
+#include "perimeter.cpp"
 #include <queue>
 
 class Layer

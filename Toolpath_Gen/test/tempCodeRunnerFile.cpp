@@ -5,7 +5,6 @@
 #include <iterator>
 #include <map>
 #include <queue>
-#include "../lib/toolpath_gen.h"
 #include "../lib/toolpath_gen.cpp"
 
 using namespace std;
@@ -56,14 +55,14 @@ queue<Layer> dummy_builder(float b)
     dot a2;
     dot a3;
     dot a4;
-    a1.x = 100+0;
-    a1.y = 100+0;
-    a2.x = 100+b;
-    a2.y = 100+0;
-    a3.x = 100+b;
-    a3.y = 100+b;
-    a4.x = 100+0;
-    a4.y = 100+b;
+    a1.x = 90+0;
+    a1.y = 90+0;
+    a2.x = 90+b;
+    a2.y = 90+0;
+    a3.x = 90+b;
+    a3.y = 90+b;
+    a4.x = 90+0;
+    a4.y = 90+b;
     for(float i = 0; i < b; i+=0.1)
     {
         Perimeter p;

@@ -3,12 +3,8 @@
 
 #include <fstream>
 #include <iostream>
-#include "toolpath_settings.h"
 #include "toolpath_settings.cpp"
-#include "perimeter.h"
-#include "perimeter.cpp"
-#include "layer.h"
-#include "layer.cpp"
+#include "lines.cpp"
 
 class Generator
 {

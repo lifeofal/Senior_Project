@@ -66,3 +66,8 @@ void Perimeter::showq()
     g = queue<dot>();
     cout << '\n';
 }
+
+dot Perimeter::back()
+{
+    return data.back();
+}

@@ -3,13 +3,31 @@
 
 #include <vector>
 #include <queue>
+#include <cmath>
 
 using namespace std;
+
+float PRECISION = 0.001f;
 
 struct dot
 {
     float x;
     float y;
+    bool operator!=(dot a)
+    {
+        if(fabs(a.x-x) < PRECISION && fabs(a.y-y) < PRECISION)
+            return false;
+        else
+            return true;
+    }
+
+    bool operator==(dot a)
+    {
+        if(fabs(a.x-x) < PRECISION && fabs(a.y-y) < PRECISION)
+            return true;
+        else
+            return false;
+    }
 };
 
 class Perimeter
@@ -29,6 +47,8 @@ class Perimeter
         void showq();
 
         void printSize();
+
+        dot back();
 
         /* TODO:: 
             *
