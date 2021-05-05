@@ -25,6 +25,8 @@ class Triangle {
         Point *getPoints();
         Point getNorm();
 
+        float maxZHeight();
+
         void printTriangle();
 
 

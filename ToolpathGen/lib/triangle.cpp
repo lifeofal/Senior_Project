@@ -34,23 +34,43 @@ void Triangle::insertPoints(Point a, Point b, Point c){
 }
 
 void Triangle::insertNormXYZ(float x, float y, float z){
-    
+    Point temp;
+    temp.x = x;
+    temp.y = y;
+    temp.z = z;
+
+    normal = temp;
 
 }
 void Triangle::insertNormPoint(Point a){
+    normal = a;
 
 }
 
-Point Triangle::*getPoints(){
+Point *Triangle::getPoints(){
+    return points;
 
 }
 
 Point Triangle::getNorm(){
+    return normal;
+}
 
+float Triangle::maxZHeight() {
+    float max;
+    max = points[0].z;
+    if(max < points[1].z) 
+        max = points[1].z;
+    if(max < points[2].z)
+        max = points[2].z;
+    return max;
 }
 
 void Triangle::printTriangle(){
-
+    cout << "Point 1: " << points[0].x << ", " << points[0].y << ", " << points[0].z << endl;
+    cout << "Point 2: " << points[1].x << ", " << points[1].y << ", " << points[1].z << endl;
+    cout << "Point 3: " << points[2].x << ", " << points[2].y << ", " << points[2].z << endl;
+    cout << "Normal: " << normal.x << ", " << normal.y << ", " << normal.z << endl;
 }
 
 
