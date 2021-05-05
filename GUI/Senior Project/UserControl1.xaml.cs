@@ -270,7 +270,7 @@ namespace Senior_Project
                     zHeight = tempPoint.Z;
                 }
             }
-            await file.WriteLineAsync(zHeight.ToString());
+            await file.WriteLineAsync("#"+zHeight.ToString());
             file.Close();
         }
 
