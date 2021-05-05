@@ -42,6 +42,9 @@ int main() {
 		while (!TrigData.eof()) {
 			TrigData >> conversion;
 			//if the conversion is "M:", then break
+			if(conversion.compare("#") == 0) {
+				break;
+			}
 			point1x = stof(conversion);
 			TrigData >> conversion;
 			point1y = stof(conversion);
@@ -201,16 +204,17 @@ line slice(float point1X, float point1Y, float point1Z,
 
 
 float getMaxZ() {
-	// fstream forMax;
-	// forMax.open("../resource/ModelData.txt", ios::in);
-	// string conversion;
-	// float max;
-	// while (!forMax.eof()) {
-	// 	forMax >> conversion;
-	// }
-	// max = stof(conversion);
+	fstream forMax;
+	forMax.open("../resource/ModelData.txt", ios::in);
+	string conversion;
+	float max;
+	forMax >> conversion;
+	while (conversion.compare("#") != 0) {
+		forMax >> conversion;
+	}
+	forMax >> conversion;
+	max = stof(conversion);
 
-	// return max;
-	return 20.0;
+	return max;
 
 }
