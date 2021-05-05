@@ -16,7 +16,7 @@ class Generator
         Settings config;
 
     public:
-        Generator(char *path);
+        Generator(char *path, string configDir);
         void open_File();
         void close_File();
         void print_XYE(Layer layer);

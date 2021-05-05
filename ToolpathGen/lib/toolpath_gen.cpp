@@ -3,6 +3,7 @@
 #define _USE_MATH_DEFINES
 
 #include <iostream>
+#include <direct.h>
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -11,11 +12,11 @@
 
 // Settings config("../settings/config.ini");
 
-Generator::Generator(char *path) 
+Generator::Generator(char *path, string configDir) 
 {
     Settings temp_config;
     std::string temp_path(path);
-    temp_config.set_path("C:\\Users\\rnmos\\source\\repos\\ToolpathGen\\resource\\config.ini");
+    temp_config.set_path(configDir);
     config = temp_config;
     file_name = temp_path += config.s_get_setting("output_filename_format");
     // temp.~Settings();

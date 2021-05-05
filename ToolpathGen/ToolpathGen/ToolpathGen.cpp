@@ -1,10 +1,16 @@
 #include <iostream>
+#include <direct.h>
 #include <string>
 #include <fstream>
+#include <filesystem>
+#include <stdlib.h>
 #include "..\lib\toolpath_gen.cpp"
 
 using namespace std;
 
+string cwd;
+string configDir;
+string dataDir;
 line slice(float point1X, float point1Y, float point1Z,
 	float point2X, float point2Y, float point2Z,
 	float point3X, float point3Y, float point3Z,
@@ -20,13 +26,13 @@ void main_slice(char* output_path);
 
 int main(int argc, char* argv[])
 {
-	cout << argv[1] << endl;
+	std::cout << argv[1] << endl;
 	main_slice(argv[1]);
 	// cout << argv[1] << "\t" << argv[2];
 }
 
 void main_slice(char* output_path) {
-	cout << "entering main slice " << endl;
+	bool flag = true;
 	// string outputPath = "";
 	// for(int i = 0; i < pathSize; i++)
 	// {
@@ -36,29 +42,45 @@ void main_slice(char* output_path) {
 	// 		outputPath += output_path[i];
 	// }
 	// outputPath += '/';
-	cout << "hello" << endl;
+	cwd = _getcwd(NULL, 0);
+	configDir = "";
+	dataDir = cwd;
+	for (int i = 0; i < cwd.length() - 48; i++)
+	{
+		if (cwd[i] == '\\')
+		{
+			configDir += '\\';
+		}
+		configDir += cwd[i];
+	}
+	configDir += "ToolpathGen\\resource\\config.ini";
+	dataDir += "\\ModelData.txt";
+	cout << configDir << endl;
+	cout << dataDir << endl;
+
 	float maxZ = getMaxZ();
 
 	Settings forZHeight;
-	forZHeight.set_path("C:\\Users\\rnmos\\source\\repos\\ToolpathGen\\resource\\config.ini");
+	forZHeight.set_path(configDir);
 	float currentZheight = forZHeight.f_get_setting("layer_height");
 	float zIncrementer = currentZheight;
-	// cout << currentZheight;
 
 	Lines my_lines;
-
 	fstream TrigData;
+
 	float point1x, point1y, point1z, point2x, point2y, point2z, point3x, point3y, point3z;
 	float _vx, _vy, _vz;
+
 	string conversion;
-	cout << "before makes gcode" << endl;
-	Generator makesGCode(output_path);
-	cout << "after makes gcode" << endl;
+
+	Generator makesGCode(output_path, configDir);
 	makesGCode.open_File();
+
 	Layer layer;
+
 	while (currentZheight < maxZ) {
 		cout << "currentz: " << currentZheight << "\t" << maxZ << "\t" << zIncrementer << endl;
-		TrigData.open("C:\\Users\\rnmos\\source\\repos\\Senior_Project-main\\GUI\\Senior Project\\bin\\Debug\\ModelData.txt", ios::in);
+		TrigData.open(dataDir, ios::in);
 		while (!TrigData.eof()) {
 			TrigData >> conversion;
 			//if the conversion is "M:", then break
@@ -227,7 +249,7 @@ float getMaxZ() {
 	cout << "getmaxZ start" << endl;
 	fstream forMax;
 	cout << "before open" << endl;
-	forMax.open("C:\\Users\\rnmos\\source\\repos\\Senior_Project-main\\GUI\\Senior Project\\bin\\Debug\\ModelData.txt", ios::in);
+	forMax.open(dataDir, ios::in);
 	string conversion;
 	float max;
 	forMax >> conversion;
