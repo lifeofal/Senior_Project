@@ -20,7 +20,7 @@ void main_slice(char* output_path);
 
 int main(int argc, char *argv[])
 {
-	cout << argv[1] << endl;
+	// cout << argv[1] << endl;
 	main_slice(argv[1]);
 	// cout << argv[1] << "\t" << argv[2];
 }
@@ -54,7 +54,7 @@ void main_slice(char* output_path) {
 	makesGCode.open_File();
 	Layer layer;
 	while (currentZheight < maxZ) {
-		cout<<"currentz: "<<currentZheight<<"\t"<<maxZ<<"\t"<<zIncrementer<<endl;
+		// cout<<"currentz: "<<currentZheight<<"\t"<<maxZ<<"\t"<<zIncrementer<<endl;
 		TrigData.open("../resource/ModelData.txt", ios::in);
 		while (!TrigData.eof()) {
 			TrigData >> conversion;
@@ -104,7 +104,7 @@ void main_slice(char* output_path) {
 			}
 		}
 		//here is where the sort will need to be called on the lines vector. It will output a layer.
-		my_lines.showV();
+		// my_lines.showV();
 		layer = my_lines.sort();
 		// cout<<"Got here finally"<<endl;
 		layer.insertZ(currentZheight);
@@ -117,7 +117,7 @@ void main_slice(char* output_path) {
 
 	makesGCode.close_File();
 
-	cout << output_path << endl;
+	// cout << output_path << endl;
 }
 
 
@@ -134,7 +134,7 @@ bool needsSlicing(float point1Z, float point2Z, float point3Z, float currentZHei
 	if(point3Z<minZ)
 		minZ=point3Z;
 	
-	cout<<"Current Z: "<<currentZHeight<<"\tMinZ: "<<minZ<<"\tMaxZ: "<<maxZ<<"\tNeeds Slice: "<<(currentZHeight >= minZ && currentZHeight <= maxZ)<<endl;
+	// cout<<"Current Z: "<<currentZHeight<<"\tMinZ: "<<minZ<<"\tMaxZ: "<<maxZ<<"\tNeeds Slice: "<<(currentZHeight >= minZ && currentZHeight <= maxZ)<<endl;
 
 	return (currentZHeight >= minZ && currentZHeight <= maxZ);
 }

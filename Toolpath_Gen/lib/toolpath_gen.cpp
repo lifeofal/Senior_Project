@@ -67,7 +67,8 @@ void Generator::print_XYE(Layer _l)
             gcode << "\nG1 X" << loc_perimeter.get_front().x << " Y" << loc_perimeter.get_front().y << " E" << loc_extLength;          
             loc_perimeter.drop();
         }
-        gcode << "\nG1 E" << config.s_get_setting("retract_length") <<  " F" << (config.f_get_setting("retract_speed") * 60);
+        loc_extLength -= config.f_get_setting("retract_length");
+        gcode << "\nG1 E" << loc_extLength <<  " F" << (config.f_get_setting("retract_speed") * 60);
 
         layer.drop(); //Drop perimeter from layer when finished
     }
