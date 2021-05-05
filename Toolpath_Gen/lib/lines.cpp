@@ -8,11 +8,6 @@ Lines::Lines()
 
 }
 
-Lines Lines::copy()
-{
-
-}
-
 void Lines::insertline(float x1, float y1, float x2, float y2)
 {
     line temp;

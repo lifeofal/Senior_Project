@@ -33,8 +33,6 @@ class Lines
 {
     public:
         Lines();
-        
-        Lines copy();
 
         void insertline(float x1, float y1, float x2, float y2);
         void insert(line n);
