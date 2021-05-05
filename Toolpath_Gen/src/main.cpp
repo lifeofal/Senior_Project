@@ -18,7 +18,7 @@ bool notFlat(float vx, float vy, float vz);
 float getMaxZ();
 
 
-int main() {
+int main(string output_path) {
 	float maxZ = getMaxZ();
 	
 	Settings forZHeight;
@@ -33,7 +33,7 @@ int main() {
 	float point1x, point1y, point1z, point2x, point2y, point2z, point3x, point3y, point3z;
 	float _vx, _vy, _vz;
 	string conversion;
-	Generator makesGCode("../resource/");
+	Generator makesGCode(output_path);
 	makesGCode.open_File();
 	Layer layer;
 	while (currentZheight < maxZ) {
