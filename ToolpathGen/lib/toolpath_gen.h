@@ -14,7 +14,7 @@ class Generator
         std::string travel(dot d);
         std::string out_path, file_name;
         Settings config;
-
+        //
     public:
         Generator(char *path, string configDir);
         void open_File();

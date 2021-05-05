@@ -11,7 +11,7 @@
 
 
 // Settings config("../settings/config.ini");
-
+//
 Generator::Generator(char *path, string configDir) 
 {
     Settings temp_config;

@@ -32,15 +32,6 @@ int main(int argc, char* argv[])
 }
 
 void main_slice(char* output_path) {
-	bool flag = true;
-	// string outputPath = "";
-	// for(int i = 0; i < pathSize; i++)
-	// {
-	// 	if(output_path[i] == '\\')
-	// 		outputPath += '/';
-	// 	else
-	// 		outputPath += output_path[i];
-	// }
 	// outputPath += '/';
 	cwd = _getcwd(NULL, 0);
 	configDir = "";
