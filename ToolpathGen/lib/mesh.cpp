@@ -56,10 +56,22 @@ Triangle Mesh::getTrig(){ //return the top triangle in the vector
     return data[0];
 } 
 void Mesh::trim(float currentZHeight){ // delete all triangles below current z height
-    for(vector<Triangle>::iterator itr = data.begin(); itr != data.end(); ++itr) {
-        if(itr->maxZHeight() < currentZHeight) {
-            iter_swap(itr,data.end());
-            data.erase(data.end());
+    cout << "in trim" << endl;
+    Triangle temp;
+    for(int i = 0; i < data.size(); i++) {
+        if(data[i].maxZHeight() < currentZHeight) { //just check to see if it swaps the triangles correctly
+            temp = data.back();
+            data.back() = data[i];
+            data[i] = temp;
         }
+    
     }
-} 
+}
+
+void Mesh::printMesh() {
+    cout << "__________Printing mesh __________" << endl;
+    for(int i = 0; i < data.size(); i++) {
+        data[i].printTriangle();
+        cout << endl;
+    }
+}

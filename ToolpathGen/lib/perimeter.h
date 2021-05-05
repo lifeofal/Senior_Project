@@ -49,16 +49,13 @@ class Perimeter
 
         dot back();
 
-        /* TODO:: 
-            *
-
-        //*/
+        bool is_internal();
+        
     private:
         void insertV(vector<dot> perimeter_v);
         vector<dot> data;
         dot last_point;
-
-
+        bool is_internal;
 };
 
 #endif

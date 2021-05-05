@@ -10,6 +10,8 @@ class Layer
         Layer();
 
         Layer copy();
+
+        Layer offset();
         
         void insert(Perimeter _per);
         void insertZ(float m_z);

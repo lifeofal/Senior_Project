@@ -19,6 +19,7 @@ class Mesh {
 
         Triangle getTrig(); //return the top triangle in the vector
         void trim(float currentZHeight); // delete all triangles below current z height
+        void printMesh();
 
     private:
         vector<Triangle> data;

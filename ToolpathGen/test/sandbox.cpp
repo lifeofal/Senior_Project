@@ -4,9 +4,45 @@
 
 int main()
 {
-    Triangle adder;
-    adder.insertXYZ(0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,1.0);
-    adder.insertNormXYZ(0.0,1.0,1.0);
+    Mesh tester_M;
+    Triangle tester_T;
+    Point tester_P;
+    tester_T.insertXYZ(1.0,1.0,1.0,0.0,1.0,0.0,0.0,1.0,1.0);
+    tester_T.insertNormXYZ(0.0,1.0,1.0);
+    // cout << "Current Max Z is: " << tester_T.maxZHeight() << "expecting 1" << endl;
+    tester_M.insertTriangle(tester_T);
+
+    tester_T.insertXYZ(0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0);
+    tester_T.insertNormXYZ(0.0,1.0,1.0);
+    // cout << "Current Max Z is: " << tester_T.maxZHeight() << "expecting 0" << endl;
+    tester_M.insertTriangle(tester_T);
+
+    tester_T.insertXYZ(0.0,0.0,2.0,0.0,1.0,0.0,0.0,1.0,1.0);
+    tester_T.insertNormXYZ(0.0,1.0,1.0);
+    // cout << "Current Max Z is: " << tester_T.maxZHeight() << "expecting 2" << endl;
+    tester_M.insertTriangle(tester_T);
+
+    tester_T.insertXYZ(0.0,0.0,0.0,1.0,1.0,0.0,0.0,1.0,1.0);
+    tester_T.insertNormXYZ(0.0,1.0,1.0);
+    // cout << "Current Max Z is: " << tester_T.maxZHeight() << "expecting 1" << endl;
+    tester_M.insertTriangle(tester_T);
+
+    
+
+    tester_M.printMesh();
+    // tester_M.getTrig().printTriangle();
+
+    tester_M.trim(0.5);
+    // cout << "test" << endl;
+    // tester_M.getTrig().printTriangle();
+    Tester_M.printMesh();
+
+
+
+
+
+
+
     // Lines my_lines;
     // my_lines.insertline(0.0000001,0.0000001, 0.0000001,1.0000001);
     // my_lines.insertline(3.0000001,3.0000001, 3.0000001,5.0000001);
