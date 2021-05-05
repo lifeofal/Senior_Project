@@ -17,8 +17,14 @@ bool notFlat(float vx, float vy, float vz);
 
 float getMaxZ();
 
+void main_slice(string output_path);
 
-int main(string output_path) {
+int main()
+{
+	main_slice("../resource/");
+}
+
+void main_slice(string output_path) {
 	float maxZ = getMaxZ();
 	
 	Settings forZHeight;
