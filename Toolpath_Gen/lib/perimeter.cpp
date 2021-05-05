@@ -6,13 +6,13 @@ Perimeter::Perimeter() {}
 Perimeter Perimeter::copy()
 {
     Perimeter temp;
-    temp.insertq(data);
+    temp.insertV(data);
     return temp;
 }
 
-void Perimeter::insertq(queue<dot> q)
+void Perimeter::insertV(vector<dot> perimeter_v)
 {
-    data = q;
+    data = perimeter_v;
 }
 
 void Perimeter::insertxy(float x, float y)
@@ -20,28 +20,28 @@ void Perimeter::insertxy(float x, float y)
     dot temp;
     temp.x = x;
     temp.y = y;
-    data.push(temp);
+    data.push_back(temp);
 }
 
-void Perimeter::insert(dot n)
+void Perimeter::insert(dot perimeter_dot)
 {
-    data.push(n);
+    data.push_back(perimeter_dot);
 }
 
-dot Perimeter::get_points()
+dot Perimeter::get_front()
 {
     return data.front();
 }
 
-dot Perimeter::get_last_point()
+dot Perimeter::get_back()
 {
-    return last_vector;
+    return last_point;
 }
 
 void Perimeter::drop()
 {
-    last_vector = data.front();
-    data.pop();
+    last_point = data.front();
+    data.erase(data.begin());
 }
 
 bool Perimeter::isEmpty()
@@ -51,19 +51,19 @@ bool Perimeter::isEmpty()
 
 void Perimeter::printSize()
 {
-    std::cout<<"Size of Queue: " << data.size();
+    std::cout<<"Size of vector: " << data.size();
 }
 
-void Perimeter::showq()
+void Perimeter::showV()
 {
-    queue<dot> g = data;
+    vector<dot> g = data;
     while (!g.empty()) {
         dot n;
         n = g.front();
         cout << "X: " << n.x << "\tY: " << n.y <<endl;
-        g.pop();
+        data.erase(data.begin());
     }
-    g = queue<dot>();
+    g = vector<dot>();
     cout << '\n';
 }
 

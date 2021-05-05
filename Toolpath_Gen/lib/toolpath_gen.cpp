@@ -55,16 +55,16 @@ void Generator::print_XYE(Layer _l)
 
         float loc_extLength = config.f_get_setting("retract_length");
 
-        loc_perimeter.get_points(); // Travel to first point && pop the point to put it into last_point in perimeter class
+        loc_perimeter.get_front(); // Travel to first point && pop the point to put it into last_point in perimeter class
         // cycle throught the next points while .get_Perimeter()
-        gcode << travel(loc_perimeter.get_points());
-        loc_perimeter.insert(loc_perimeter.get_points());
+        gcode << travel(loc_perimeter.get_front());
+        loc_perimeter.insert(loc_perimeter.get_front());
         loc_perimeter.drop();
 
         while(!loc_perimeter.isEmpty())
         {
-            loc_extLength += get_extLength(loc_perimeter.get_points(), loc_perimeter.get_last_point());
-            gcode << "\nG1 X" << loc_perimeter.get_points().x << " Y" << loc_perimeter.get_points().y << " E" << loc_extLength;          
+            loc_extLength += get_extLength(loc_perimeter.get_front(), loc_perimeter.get_back());
+            gcode << "\nG1 X" << loc_perimeter.get_front().x << " Y" << loc_perimeter.get_front().y << " E" << loc_extLength;          
             // cout<<"XYE showQ"<<endl;
             // loc_perimeter.showq();
             loc_perimeter.drop();

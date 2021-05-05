@@ -2,7 +2,6 @@
 #define PERIMETER_H
 
 #include <vector>
-#include <queue>
 #include <cmath>
 
 using namespace std;
@@ -37,14 +36,14 @@ class Perimeter
         
         Perimeter copy();
 
-        void insertxy(float x, float y);
-        void insert(dot n);
+        void insertxy(float _x, float _y);
+        void insert(dot _dot);
         void drop();
-        dot get_points();
-        dot get_last_point();
+        dot get_front();
+        dot get_back();
 
         bool isEmpty();
-        void showq();
+        void showV();
 
         void printSize();
 
@@ -55,9 +54,9 @@ class Perimeter
 
         //*/
     private:
-        void insertq(queue<dot> q);
-        queue<dot> data;
-        dot last_vector;
+        void insertV(vector<dot> perimeter_v);
+        vector<dot> data;
+        dot last_point;
 
 
 };

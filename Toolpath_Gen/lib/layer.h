@@ -2,7 +2,7 @@
 #define LAYER_H
 
 #include "perimeter.cpp"
-#include <queue>
+#include <vector>
 
 class Layer
 {
@@ -22,8 +22,8 @@ class Layer
         bool isEmpty();
         void printSize();
     private:
-        void insertq(std::queue<Perimeter> q);
-        std::queue<Perimeter> data;
+        void insertV(std::vector<Perimeter> layer_vector);
+        std::vector<Perimeter> data;
         float z_height;
         bool is_solid;
 

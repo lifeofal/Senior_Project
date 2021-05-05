@@ -7,13 +7,13 @@ Layer::Layer()
 Layer Layer::copy()
 {
     Layer temp;
-    temp.insertq(data);
+    temp.insertV(data);
     return temp;
 }
 
 void Layer::insert(Perimeter _per)
 {
-    data.push(_per);
+    data.push_back(_per);
 }
 
 void Layer::insertZ(float m_z)
@@ -28,7 +28,7 @@ void Layer::set_Solid(bool m_bool)
 
 void Layer::drop()
 {
-    data.pop();
+    data.erase(data.begin());
 }
 
 Perimeter Layer::get_Perimeter()
@@ -53,10 +53,10 @@ bool Layer::isEmpty()
 
 void Layer::printSize()
 {
-    std::cout<<"Size of Queue: " << data.size();
+    std::cout<<"Size of vector: " << data.size();
 }
 
-void Layer::insertq(std::queue<Perimeter> q)
+void Layer::insertV(std::vector<Perimeter> layer_vector)
 {
-    data = q;
+    data = layer_vector;
 }
