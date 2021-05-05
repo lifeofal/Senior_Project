@@ -40,7 +40,7 @@ class Perimeter
         void insert(dot _dot);
         void drop();
         dot get_front();
-        dot get_back();
+        dot get_last();
 
         bool isEmpty();
         void showV();

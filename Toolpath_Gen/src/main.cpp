@@ -2,7 +2,6 @@
 #include <string>
 #include <fstream>
 #include "..\lib\toolpath_gen.cpp"
-#include "..\lib\lines.h"
 
 using namespace std;
 

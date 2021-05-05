@@ -50,27 +50,25 @@ void Generator::print_XYE(Layer _l)
     {
         
         gcode << "\nG1 Z" << layer.get_Z() << " F" << (config.f_get_setting("travel_speed")*60) << "\n";    // Set Z Height
-
+        float loc_extLength = 0;
         Perimeter loc_perimeter = layer.get_Perimeter();
 
-        float loc_extLength = config.f_get_setting("retract_length");
-
         loc_perimeter.get_front(); // Travel to first point && pop the point to put it into last_point in perimeter class
-        // cycle throught the next points while .get_Perimeter()
-        gcode << travel(loc_perimeter.get_front());
         loc_perimeter.insert(loc_perimeter.get_front());
+        gcode << travel(loc_perimeter.get_front());
+        loc_extLength += config.f_get_setting("retract_length");
         loc_perimeter.drop();
 
+        // cycle throught the next points while .get_Perimeter()
         while(!loc_perimeter.isEmpty())
         {
-            loc_extLength += get_extLength(loc_perimeter.get_front(), loc_perimeter.get_back());
+            loc_extLength += get_extLength(loc_perimeter.get_front(), loc_perimeter.get_last());
             gcode << "\nG1 X" << loc_perimeter.get_front().x << " Y" << loc_perimeter.get_front().y << " E" << loc_extLength;          
-            // cout<<"XYE showQ"<<endl;
-            // loc_perimeter.showq();
             loc_perimeter.drop();
         }
+        gcode << "\nG1 E" << config.s_get_setting("retract_length") <<  " F" << (config.f_get_setting("retract_speed") * 60);
 
-        layer.drop(); //Leave alone
+        layer.drop(); //Drop perimeter from layer when finished
     }
 
     gcode.close();
@@ -93,7 +91,6 @@ std::string Generator::travel(dot d)
 {
     std::stringstream output;
     output << "\nG92 E0";
-    output << "\nG1 E-" << config.s_get_setting("retract_length") <<  " F" << (config.f_get_setting("retract_speed") * 60);
     output << "\nG1 X" << d.x << " Y" << d.y << " F" << (config.f_get_setting("travel_speed")*60);
     output << "\nG1 E" << config.s_get_setting("retract_length") << " F" << (config.f_get_setting("retract_speed") * 60);
     output << "\nG1 F" << (config.f_get_setting("perimeter_speed")*60);
@@ -108,6 +105,7 @@ float Generator::get_extLength(dot a, dot b)
     float length = sqrt( pow( ( a.x-b.x), 2.0) + pow((a.y-b.y), 2.0) );
     float volumeL = ((4/3)* M_PI * (nozDiam/2) * (nozDiam/2) * (layHeight/2)) + ((layHeight * (nozDiam-layHeight) * length) + (M_PI * pow((layHeight/2), 2.0) * layHeight) );
     float extLength = volumeL / ( M_PI * pow( (filDiam / 2), 2.0));
+    extLength = extLength * config.f_get_setting("extrusion_multiplier");
     return extLength;
 }
 

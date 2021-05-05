@@ -33,7 +33,7 @@ dot Perimeter::get_front()
     return data.front();
 }
 
-dot Perimeter::get_back()
+dot Perimeter::get_last()
 {
     return last_point;
 }
