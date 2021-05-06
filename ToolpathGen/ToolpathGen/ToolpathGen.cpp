@@ -5,6 +5,7 @@
 #include <filesystem>
 #include <stdlib.h>
 #include "..\lib\toolpath_gen.cpp"
+#include "..\lib\mesh.cpp"
 
 using namespace std;
 
@@ -69,12 +70,13 @@ void main_slice(char* output_path) {
 
 	Layer layer;
 
-	while (currentZheight < maxZ) {
-		cout << "currentz: " << currentZheight << "\t" << maxZ << "\t" << zIncrementer << endl;
-		TrigData.open(dataDir, ios::in);
+	Mesh mesh;
+
+	TrigData.open(dataDir, ios::in);
 		while (!TrigData.eof()) {
+			Triangle temp;
 			TrigData >> conversion;
-			//if the conversion is "M:", then break
+			//if the conversion is "#", then break
 			if (conversion.compare("#") == 0) {
 				break;
 			}
@@ -107,10 +109,27 @@ void main_slice(char* output_path) {
 			TrigData >> conversion;
 			_vz = stof(conversion);
 
+			temp.insertXYZ(point1x, point1y, point1z, point2x, point2y, point2z, point3x, point3y, point3z);
+			temp.insertNormXYZ(_vx, _vy, _vz);
+
+			mesh.insertTriangle(temp);
+		}
+
+		TrigData.close();
+
+	while (currentZheight < maxZ) {
+		
+		mesh.trim(currentZheight);
+		
+		cout << "currentz: " << currentZheight << "\t" << maxZ << "\t" << zIncrementer << endl;
+		for(int i = 0; i < mesh.size(); i++) {
+			Triangle checkSlice = mesh.getTrig(i);
+			Point *points = checkSlice.getPoints();
+			Point norm = checkSlice.getNorm();
 			// cout<<"Needs slice: "<<needsSlicing(point1z, point2z, point3z, currentZheight)<<"\tNot Flat: "<<notFlat(_vx, _vy, _vz)<<endl;
-			if (needsSlicing(point1z, point2z, point3z, currentZheight) && notFlat(_vx, _vy, _vz))
+			if (needsSlicing(points[0].z, points[1].z, points[2].z, currentZheight) && notFlat(norm.x, norm.y, norm.z))
 			{
-				line endpoints = slice(point1x, point1y, point1z, point2x, point2y, point2z, point3x, point3y, point3z, currentZheight);
+				line endpoints = slice(points[0].x, points[0].y, points[0].z, points[1].x, points[1].y, points[1].z, points[2].x, points[2].y, points[2].z, currentZheight);
 				//add recentendpoints array to the lines vector
 				// cout<<endpoints.xy2.x;
 
@@ -126,7 +145,7 @@ void main_slice(char* output_path) {
 		layer.insertZ(currentZheight);
 		makesGCode.print_XYE(layer);
 
-		TrigData.close();
+		
 		currentZheight += zIncrementer;
 		// cout<<"currentz: "<<currentZheight<<"\t"<<maxZ<<"\t"<<zIncrementer<<endl;
 	}
