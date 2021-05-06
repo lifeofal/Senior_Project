@@ -15,7 +15,8 @@ Layer Layer::copy()
 
 Layer Layer::offset(float nozDiam)
 {
-    
+    Layer temp;
+    return temp;
 }
 
 void Layer::insert(Perimeter _per)
