@@ -5,6 +5,7 @@
 #include <filesystem>
 #include <stdlib.h>
 #include "..\lib\toolpath_gen.cpp"
+#include "..\lib\mesh.cpp"
 
 using namespace std;
 
@@ -36,7 +37,7 @@ void main_slice(char* output_path) {
 	cwd = _getcwd(NULL, 0);
 	configDir = "";
 	dataDir = cwd;
-	for (int i = 0; i < cwd.length() - 48; i++)
+	for (int i = 0; i < cwd.length() - 28; i++)
 	{
 		if (cwd[i] == '\\')
 		{
@@ -46,8 +47,8 @@ void main_slice(char* output_path) {
 	}
 	configDir += "ToolpathGen\\resource\\config.ini";
 	dataDir += "\\ModelData.txt";
-	cout << configDir << endl;
-	cout << dataDir << endl;
+	//cout << configDir << endl;
+	//cout << dataDir << endl;
 
 	float maxZ = getMaxZ();
 
@@ -69,12 +70,13 @@ void main_slice(char* output_path) {
 
 	Layer layer;
 
-	while (currentZheight < maxZ) {
-		cout << "currentz: " << currentZheight << "\t" << maxZ << "\t" << zIncrementer << endl;
-		TrigData.open(dataDir, ios::in);
+	Mesh mesh;
+
+	TrigData.open(dataDir, ios::in);
 		while (!TrigData.eof()) {
+			Triangle temp;
 			TrigData >> conversion;
-			//if the conversion is "M:", then break
+			//if the conversion is "#", then break
 			if (conversion.compare("#") == 0) {
 				break;
 			}
@@ -107,10 +109,29 @@ void main_slice(char* output_path) {
 			TrigData >> conversion;
 			_vz = stof(conversion);
 
+			temp.insertXYZ(point1x, point1y, point1z, point2x, point2y, point2z, point3x, point3y, point3z);
+			temp.insertNormXYZ(_vx, _vy, _vz);
+
+			mesh.insertTriangle(temp);
+		}
+
+		TrigData.close();
+
+	while (currentZheight < maxZ) {
+		
+		mesh.trim(currentZheight);
+
+		cout << "current layer height: " << currentZheight << endl;
+		
+		//cout << "currentz: " << currentZheight << "\t" << maxZ << "\t" << zIncrementer << endl;
+		for(int i = 0; i < mesh.size(); i++) {
+			Triangle checkSlice = mesh.getTrig(i);
+			Point *points = checkSlice.getPoints();
+			Point norm = checkSlice.getNorm();
 			// cout<<"Needs slice: "<<needsSlicing(point1z, point2z, point3z, currentZheight)<<"\tNot Flat: "<<notFlat(_vx, _vy, _vz)<<endl;
-			if (needsSlicing(point1z, point2z, point3z, currentZheight) && notFlat(_vx, _vy, _vz))
+			if (needsSlicing(points[0].z, points[1].z, points[2].z, currentZheight) && notFlat(norm.x, norm.y, norm.z))
 			{
-				line endpoints = slice(point1x, point1y, point1z, point2x, point2y, point2z, point3x, point3y, point3z, currentZheight);
+				line endpoints = slice(points[0].x, points[0].y, points[0].z, points[1].x, points[1].y, points[1].z, points[2].x, points[2].y, points[2].z, currentZheight);
 				//add recentendpoints array to the lines vector
 				// cout<<endpoints.xy2.x;
 
@@ -126,14 +147,14 @@ void main_slice(char* output_path) {
 		layer.insertZ(currentZheight);
 		makesGCode.print_XYE(layer);
 
-		TrigData.close();
+		
 		currentZheight += zIncrementer;
 		// cout<<"currentz: "<<currentZheight<<"\t"<<maxZ<<"\t"<<zIncrementer<<endl;
 	}
 
 	makesGCode.close_File();
 
-	cout << output_path << endl;
+	//cout << output_path << endl;
 }
 
 
@@ -150,7 +171,7 @@ bool needsSlicing(float point1Z, float point2Z, float point3Z, float currentZHei
 	if (point3Z < minZ)
 		minZ = point3Z;
 
-	cout << "Current Z: " << currentZHeight << "\tMinZ: " << minZ << "\tMaxZ: " << maxZ << "\tNeeds Slice: " << (currentZHeight >= minZ && currentZHeight <= maxZ) << endl;
+	//cout << "Current Z: " << currentZHeight << "\tMinZ: " << minZ << "\tMaxZ: " << maxZ << "\tNeeds Slice: " << (currentZHeight >= minZ && currentZHeight <= maxZ) << endl;
 
 	return (currentZHeight >= minZ && currentZHeight <= maxZ);
 }
@@ -237,9 +258,7 @@ line slice(float point1X, float point1Y, float point1Z,
 
 
 float getMaxZ() {
-	cout << "getmaxZ start" << endl;
 	fstream forMax;
-	cout << "before open" << endl;
 	forMax.open(dataDir, ios::in);
 	string conversion;
 	float max;
@@ -249,7 +268,6 @@ float getMaxZ() {
 	}
 	forMax >> conversion;
 	max = stof(conversion);
-	cout << "getmaxZ end" << endl;
 	forMax.close();
 	return max;
 
