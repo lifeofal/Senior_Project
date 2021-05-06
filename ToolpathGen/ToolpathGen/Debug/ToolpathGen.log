@@ -1,0 +1,10 @@
+﻿  ToolpathGen.cpp
+C:\Users\rnmos\source\repos\ToolpathGen\lib\toolpath_gen.cpp(106,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\rnmos\source\repos\ToolpathGen\lib\toolpath_gen.cpp(107,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\rnmos\source\repos\ToolpathGen\lib\toolpath_gen.cpp(108,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\rnmos\source\repos\ToolpathGen\ToolpathGen\ToolpathGen.cpp(165,18): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\rnmos\source\repos\ToolpathGen\ToolpathGen\ToolpathGen.cpp(169,18): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\rnmos\source\repos\ToolpathGen\ToolpathGen\ToolpathGen.cpp(173,18): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\rnmos\source\repos\ToolpathGen\lib\toolpath_settings.cpp(61): warning C4715: 'Settings::f_get_setting': not all control paths return a value
+C:\Users\rnmos\source\repos\ToolpathGen\lib\toolpath_settings.cpp(70): warning C4715: 'Settings::s_get_setting': not all control paths return a value
+  ToolpathGen.vcxproj -> C:\Users\rnmos\source\repos\ToolpathGen\Debug\ToolpathGen.exe
