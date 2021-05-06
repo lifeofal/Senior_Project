@@ -17,8 +17,11 @@ class Mesh {
         void insertPoints(Point a, Point b, Point c, Point v);
         void insertTriangle(Triangle a);
 
-        Triangle getTrig(); //return the top triangle in the vector
+        Triangle getTrig(int i); //return the top triangle in the vector
+        int size();
+
         void trim(float currentZHeight); // delete all triangles below current z height
+
         void printMesh();
 
     private:

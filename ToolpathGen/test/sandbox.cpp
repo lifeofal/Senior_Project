@@ -1,4 +1,4 @@
-#include "../lib/toolpath_gen.cpp"
+//#include "../lib/toolpath_gen.cpp"
 #include "../lib/mesh.cpp"
 
 
@@ -27,15 +27,16 @@ int main()
     // cout << "Current Max Z is: " << tester_T.maxZHeight() << "expecting 1" << endl;
     tester_M.insertTriangle(tester_T);
 
-    
-
     tester_M.printMesh();
-    // tester_M.getTrig().printTriangle();
 
-    tester_M.trim(0.5);
+    tester_M.getTrig(0).printTriangle();
+    tester_M.getTrig(2).printTriangle();
+
+
+    tester_M.trim(1.5);
+
     // cout << "test" << endl;
     // tester_M.getTrig().printTriangle();
-    Tester_M.printMesh();
 
 
 

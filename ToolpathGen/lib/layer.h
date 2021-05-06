@@ -11,7 +11,7 @@ class Layer
 
         Layer copy();
 
-        Layer offset();
+        Layer offset(float nozDiam);
         
         void insert(Perimeter _per);
         void insertZ(float m_z);
@@ -23,12 +23,14 @@ class Layer
 
         bool isEmpty();
         void printSize();
+        void check_internal();
+
     private:
         void insertV(std::vector<Perimeter> layer_vector);
         std::vector<Perimeter> data;
         float z_height;
         bool is_solid;
-
+        int orientation;
 };
 
 #endif

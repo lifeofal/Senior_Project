@@ -71,3 +71,13 @@ dot Perimeter::back()
 {
     return data.back();
 }
+
+bool Perimeter::is_internal()
+{
+    return isInternal;
+}
+
+void Perimeter::set_internal(bool set)
+{
+    isInternal = set;
+}

@@ -52,17 +52,26 @@ void Mesh::insertTriangle(Triangle a){
     data.push_back(a);
 }
 
-Triangle Mesh::getTrig(){ //return the top triangle in the vector
-    return data[0];
+Triangle Mesh::getTrig(int i){ //return the triangle at the specified index within the vector
+    return data[i];
 } 
+
+int Mesh::size() {
+    return data.size();
+}
+
 void Mesh::trim(float currentZHeight){ // delete all triangles below current z height
-    cout << "in trim" << endl;
+    // cout << "in trim" << endl;
     Triangle temp;
     for(int i = 0; i < data.size(); i++) {
-        if(data[i].maxZHeight() < currentZHeight) { //just check to see if it swaps the triangles correctly
+        // cout << "i currently is: " << i << endl;
+        // cout << "max z height is: " << data[i].maxZHeight() << endl;
+        if(data[i].maxZHeight() < currentZHeight) { 
             temp = data.back();
             data.back() = data[i];
             data[i] = temp;
+            data.erase(data.end());
+            i = -1;
         }
     
     }
@@ -74,4 +83,5 @@ void Mesh::printMesh() {
         data[i].printTriangle();
         cout << endl;
     }
+    cout << "__________________________________" << endl;
 }

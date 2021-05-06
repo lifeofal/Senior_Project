@@ -50,12 +50,13 @@ class Perimeter
         dot back();
 
         bool is_internal();
-        
+        void set_internal(bool set);
+
     private:
         void insertV(vector<dot> perimeter_v);
         vector<dot> data;
         dot last_point;
-        bool is_internal;
+        bool isInternal;
 };
 
 #endif
