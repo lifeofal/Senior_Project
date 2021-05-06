@@ -24,13 +24,15 @@ class Layer
         bool isEmpty();
         void printSize();
         void check_internal();
-
+ 
     private:
         void insertV(std::vector<Perimeter> layer_vector);
         std::vector<Perimeter> data;
         float z_height;
         bool is_solid;
-        int orientation;
+        int orientation(dot p, dot q, dot r);
+        bool doIntersect(dot p1, dot q1, dot p2, dot q2);
+        bool onSegment(dot p, dot q, dot r);
 };
 
 #endif
