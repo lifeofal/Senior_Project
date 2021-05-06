@@ -296,11 +296,68 @@ namespace Senior_Project
             setList.Add(setObject);
 
             //Layers and Perimeters
-            settings.Add("External Perimeters First : " + cbExternalPerims.Checked.ToString());
-            settings.Add("First Layer Height : " + txtFirstLayer.Text.ToString());
-            settings.Add("Layer Height : " + txtLayer.Text.ToString());
-            settings.Add("Perimeters : " + txtPerimeters.Value.ToString());
-            settings.Add("Sprial Vase : " + cbSpiral.Checked.ToString());
+            
+            if (cbExternalPerims.Checked != false)
+            {
+                setObject = new SettingsObject("external_perimeters_first", cbExternalPerims.Checked.ToString());
+                settings.Add("External Perimeters First : " + cbExternalPerims.Checked.ToString());
+            }
+            else
+            {
+                setObject = new SettingsObject("external_perimeters_first", "false");
+                settings.Add("External Perimeters First : False");
+            }
+            setList.Add(setObject);
+
+            if (txtFirstLayer.Text.ToString() != null)
+            {
+                setObject = new SettingsObject("first_layer_height", txtFirstLayer.Text.ToString());
+                settings.Add("First Layer Height : " + txtFirstLayer.Text.ToString());
+            }
+            else
+            {
+                setObject = new SettingsObject("first_layer_height", "");
+                settings.Add("First Layer Height : ");
+            }
+            setList.Add(setObject);
+
+            if (txtLayer.Text.ToString() != null)
+            {
+                setObject = new SettingsObject("layer_height", txtLayer.Text.ToString());
+                settings.Add("Layer Height : " + txtLayer.Text.ToString());
+            }
+            else
+            {
+                setObject = new SettingsObject("layer_height", "");
+                settings.Add("Layer Height : ");
+            }
+            setList.Add(setObject);
+
+            if (txtPerimeters.Text.ToString() != null)
+            {
+                setObject = new SettingsObject("perimeters", txtLayer.Text.ToString());
+                settings.Add("perimeters : " + txtLayer.Text.ToString());
+            }
+            else
+            {
+                setObject = new SettingsObject("perimeters", "");
+                settings.Add("perimeters : ");
+            }
+            setList.Add(setObject);
+
+            if (cbSpiral.Checked.ToString() != null)
+            {
+                setObject = new SettingsObject("spiral_vase", cbSpiral.Checked.ToString());
+                settings.Add("spiral_vase : " + cbSpiral.Checked.ToString());
+            }
+            else
+            {
+                setObject = new SettingsObject("spiral_vase", "");
+                settings.Add("spiral_vase : ");
+            }
+            setList.Add(setObject);
+
+        
 
 
             return setList;

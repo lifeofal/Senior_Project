@@ -37,7 +37,7 @@ void main_slice(char* output_path) {
 	cwd = _getcwd(NULL, 0);
 	configDir = "";
 	dataDir = cwd;
-	for (int i = 0; i < cwd.length() - 48; i++)
+	for (int i = 0; i < cwd.length() - 28; i++)
 	{
 		if (cwd[i] == '\\')
 		{
