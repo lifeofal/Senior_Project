@@ -176,7 +176,7 @@ namespace Senior_Project
             System.Diagnostics.Process.Start("..\\..\\..\\..\\ToolpathGen\\Debug\\ToolpathGen.exe", filePath);
           
             }
-            catch
+            catch 
             {
                MessageBox.Show("Try loading in an .stl file before exporting g-code.");
             }
@@ -238,7 +238,7 @@ namespace Senior_Project
 
             //Advanced Settings Group
 
-            setObject = new SettingsObject("xy_size_compensation", txtSizeComp.Text.ToString());
+            setObject = new SettingsObject("nozzle_diameter", txtSizeComp.Text.ToString());
             settings.Add("XY Size Compensation Setting : " + txtSizeComp.Text.ToString());
             setList.Add(setObject);
 
@@ -324,7 +324,7 @@ namespace Senior_Project
                     int indexOf = line.IndexOf('=');
                     if (indexOf != -1)
                     {
-                        settings.Add(line.Substring(0, indexOf + 1));
+                        settings.Add(line.Substring(0, line.Length));
                     }
 
 
