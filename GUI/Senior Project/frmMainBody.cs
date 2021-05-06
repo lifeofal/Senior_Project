@@ -133,9 +133,16 @@ namespace Senior_Project
             {
 
                 int indexFound = configDefaults.FindIndex(str => str.Contains(x.get_gSO()));
+
+                
                 if (indexFound != -1)
                 {
-                    configDefaults[indexFound] = configDefaults[indexFound] + " " + x.get_config_Value();
+                    //settings_blah = 10%
+                    int indexLength = configDefaults[indexFound].IndexOf('=');
+
+                    Console.WriteLine(indexFound + " " + indexLength + " " + configDefaults[indexFound]);
+
+                    configDefaults[indexFound] = configDefaults[indexFound].Substring(0, indexLength + 1) + " " + x.get_config_Value();
                 }
                 else { Console.WriteLine("Index not found for " + x.get_gSO()); }
                
@@ -238,8 +245,12 @@ namespace Senior_Project
 
             //Advanced Settings Group
 
-            setObject = new SettingsObject("nozzle_diameter", txtSizeComp.Text.ToString());
+            setObject = new SettingsObject("xy_size_compensation", txtSizeComp.Text.ToString());
             settings.Add("XY Size Compensation Setting : " + txtSizeComp.Text.ToString());
+            setList.Add(setObject);
+
+            setObject = new SettingsObject("nozzle_diameter", textBox1.Text.ToString());
+            settings.Add("XY Size Compensation Setting : " + textBox1.Text.ToString());
             setList.Add(setObject);
 
             //Infill Settings Group
@@ -450,6 +461,21 @@ namespace Senior_Project
         {
             List<SettingsObject> obj = formSettings[formIndex];
             return obj;
+        }
+
+        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

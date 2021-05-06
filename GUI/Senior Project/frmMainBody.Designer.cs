@@ -69,7 +69,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ddTopInfill = new System.Windows.Forms.ComboBox();
             this.cbInitalBeforePerim = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbGaps = new System.Windows.Forms.CheckBox();
             this.ddFillPattern = new System.Windows.Forms.ComboBox();
@@ -85,6 +84,12 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSizeComp = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panModifier.SuspendLayout();
             this.pan3DModelArea.SuspendLayout();
             this.panSideBar.SuspendLayout();
@@ -100,6 +105,8 @@
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panModifier
@@ -319,9 +326,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox3.Location = new System.Drawing.Point(11, 406);
+            this.groupBox3.Location = new System.Drawing.Point(11, 474);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(303, 154);
+            this.groupBox3.Size = new System.Drawing.Size(303, 157);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Layers and Perimeters";
@@ -514,7 +521,7 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
             this.groupBox2.Location = new System.Drawing.Point(9, 196);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(309, 204);
+            this.groupBox2.Size = new System.Drawing.Size(309, 272);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Infill";
@@ -545,7 +552,8 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(291, 178);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(291, 247);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
             // ddTopInfill
@@ -556,7 +564,7 @@
             "Rectilinear",
             "Concentric",
             "Hilbert Curve"});
-            this.ddTopInfill.Location = new System.Drawing.Point(159, 148);
+            this.ddTopInfill.Location = new System.Drawing.Point(159, 208);
             this.ddTopInfill.Name = "ddTopInfill";
             this.ddTopInfill.Size = new System.Drawing.Size(129, 21);
             this.ddTopInfill.TabIndex = 1;
@@ -566,22 +574,11 @@
             // 
             this.cbInitalBeforePerim.AutoSize = true;
             this.cbInitalBeforePerim.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbInitalBeforePerim.Location = new System.Drawing.Point(159, 119);
+            this.cbInitalBeforePerim.Location = new System.Drawing.Point(159, 167);
             this.cbInitalBeforePerim.Name = "cbInitalBeforePerim";
-            this.cbInitalBeforePerim.Size = new System.Drawing.Size(129, 23);
+            this.cbInitalBeforePerim.Size = new System.Drawing.Size(129, 35);
             this.cbInitalBeforePerim.TabIndex = 2;
             this.cbInitalBeforePerim.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 145);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(150, 33);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Top infil pattern :";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
@@ -589,7 +586,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 29);
+            this.label6.Size = new System.Drawing.Size(150, 41);
             this.label6.TabIndex = 0;
             this.label6.Text = "Bottom infill pattern :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -598,9 +595,9 @@
             // 
             this.cbGaps.AutoSize = true;
             this.cbGaps.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbGaps.Location = new System.Drawing.Point(159, 61);
+            this.cbGaps.Location = new System.Drawing.Point(159, 85);
             this.cbGaps.Name = "cbGaps";
-            this.cbGaps.Size = new System.Drawing.Size(129, 23);
+            this.cbGaps.Size = new System.Drawing.Size(129, 35);
             this.cbGaps.TabIndex = 2;
             this.cbGaps.UseVisualStyleBackColor = true;
             // 
@@ -614,7 +611,7 @@
             "Grid",
             "Cubic",
             "Concentric"});
-            this.ddFillPattern.Location = new System.Drawing.Point(159, 90);
+            this.ddFillPattern.Location = new System.Drawing.Point(159, 126);
             this.ddFillPattern.Name = "ddFillPattern";
             this.ddFillPattern.Size = new System.Drawing.Size(129, 21);
             this.ddFillPattern.TabIndex = 1;
@@ -624,9 +621,9 @@
             // 
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 116);
+            this.label10.Location = new System.Drawing.Point(3, 164);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(150, 29);
+            this.label10.Size = new System.Drawing.Size(150, 41);
             this.label10.TabIndex = 0;
             this.label10.Text = "Initial before perimeters :";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -649,9 +646,9 @@
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 29);
+            this.label7.Location = new System.Drawing.Point(3, 41);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 29);
+            this.label7.Size = new System.Drawing.Size(150, 41);
             this.label7.TabIndex = 0;
             this.label7.Text = "Fill Density :";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -667,7 +664,7 @@
             "60%",
             "80%",
             "100%"});
-            this.ddFillDens.Location = new System.Drawing.Point(159, 32);
+            this.ddFillDens.Location = new System.Drawing.Point(159, 44);
             this.ddFillDens.Name = "ddFillDens";
             this.ddFillDens.Size = new System.Drawing.Size(129, 21);
             this.ddFillDens.TabIndex = 1;
@@ -677,9 +674,9 @@
             // 
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 87);
+            this.label9.Location = new System.Drawing.Point(3, 123);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(150, 29);
+            this.label9.Size = new System.Drawing.Size(150, 41);
             this.label9.TabIndex = 0;
             this.label9.Text = "Fill Pattern :";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -688,19 +685,20 @@
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 58);
+            this.label8.Location = new System.Drawing.Point(3, 82);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(150, 29);
+            this.label8.Size = new System.Drawing.Size(150, 41);
             this.label8.TabIndex = 0;
             this.label8.Text = "Fill Gaps :";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel5);
             this.groupBox1.Controls.Add(this.tableLayoutPanel3);
             this.groupBox1.Location = new System.Drawing.Point(9, 118);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(309, 56);
+            this.groupBox1.Size = new System.Drawing.Size(309, 80);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Advanced";
@@ -759,6 +757,73 @@
             this.txtSizeComp.Text = "0";
             this.txtSizeComp.TextChanged += new System.EventHandler(this.txtSizeComp_TextChanged);
             // 
+            // label11
+            // 
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 205);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(150, 42);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Top infil pattern :";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.95189F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.04811F));
+            this.tableLayoutPanel5.Controls.Add(this.label20, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.panel2, 1, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(9, 42);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(291, 24);
+            this.tableLayoutPanel5.TabIndex = 8;
+            this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint);
+            // 
+            // label20
+            // 
+            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(3, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(150, 24);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Nozzle Diameter";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Location = new System.Drawing.Point(159, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(128, 18);
+            this.panel2.TabIndex = 1;
+            // 
+            // label21
+            // 
+            this.label21.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label21.Location = new System.Drawing.Point(90, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(32, 18);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "mm";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(90, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "0";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // frmMainBody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -789,6 +854,9 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -831,7 +899,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ComboBox ddTopInfill;
         private System.Windows.Forms.CheckBox cbInitalBeforePerim;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox cbGaps;
         private System.Windows.Forms.ComboBox ddFillPattern;
@@ -852,5 +919,11 @@
         private System.Windows.Forms.Button btnNewTab;
         private System.Windows.Forms.UserControl userControl1;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
