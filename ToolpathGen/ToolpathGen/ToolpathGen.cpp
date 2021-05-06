@@ -47,8 +47,8 @@ void main_slice(char* output_path) {
 	}
 	configDir += "ToolpathGen\\resource\\config.ini";
 	dataDir += "\\ModelData.txt";
-	cout << configDir << endl;
-	cout << dataDir << endl;
+	//cout << configDir << endl;
+	//cout << dataDir << endl;
 
 	float maxZ = getMaxZ();
 
@@ -120,8 +120,10 @@ void main_slice(char* output_path) {
 	while (currentZheight < maxZ) {
 		
 		mesh.trim(currentZheight);
+
+		cout << "current layer height: " << currentZheight << endl;
 		
-		cout << "currentz: " << currentZheight << "\t" << maxZ << "\t" << zIncrementer << endl;
+		//cout << "currentz: " << currentZheight << "\t" << maxZ << "\t" << zIncrementer << endl;
 		for(int i = 0; i < mesh.size(); i++) {
 			Triangle checkSlice = mesh.getTrig(i);
 			Point *points = checkSlice.getPoints();
@@ -152,7 +154,7 @@ void main_slice(char* output_path) {
 
 	makesGCode.close_File();
 
-	cout << output_path << endl;
+	//cout << output_path << endl;
 }
 
 
@@ -169,7 +171,7 @@ bool needsSlicing(float point1Z, float point2Z, float point3Z, float currentZHei
 	if (point3Z < minZ)
 		minZ = point3Z;
 
-	cout << "Current Z: " << currentZHeight << "\tMinZ: " << minZ << "\tMaxZ: " << maxZ << "\tNeeds Slice: " << (currentZHeight >= minZ && currentZHeight <= maxZ) << endl;
+	//cout << "Current Z: " << currentZHeight << "\tMinZ: " << minZ << "\tMaxZ: " << maxZ << "\tNeeds Slice: " << (currentZHeight >= minZ && currentZHeight <= maxZ) << endl;
 
 	return (currentZHeight >= minZ && currentZHeight <= maxZ);
 }
@@ -256,9 +258,7 @@ line slice(float point1X, float point1Y, float point1Z,
 
 
 float getMaxZ() {
-	cout << "getmaxZ start" << endl;
 	fstream forMax;
-	cout << "before open" << endl;
 	forMax.open(dataDir, ios::in);
 	string conversion;
 	float max;
@@ -268,7 +268,6 @@ float getMaxZ() {
 	}
 	forMax >> conversion;
 	max = stof(conversion);
-	cout << "getmaxZ end" << endl;
 	forMax.close();
 	return max;
 
