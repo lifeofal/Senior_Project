@@ -58,6 +58,7 @@ float Settings::f_get_setting(std::string key)
     {
         return std::stof(itr->second);
     }
+    return -1;
 }
 
 std::string Settings::s_get_setting(std::string key)
@@ -67,4 +68,5 @@ std::string Settings::s_get_setting(std::string key)
     {
         return itr->second;
     }
+    return "";
 }

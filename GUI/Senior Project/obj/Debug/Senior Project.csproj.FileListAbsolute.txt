@@ -238,3 +238,44 @@ C:\Users\rnmos\source\repos\Senior_Project-main\GUI\Senior Project\obj\Debug\Sen
 C:\Users\rnmos\source\repos\Senior_Project-main\GUI\Senior Project\obj\Debug\Senior Project.csproj.CopyComplete
 C:\Users\rnmos\source\repos\Senior_Project-main\GUI\Senior Project\obj\Debug\Senior Project.exe
 C:\Users\rnmos\source\repos\Senior_Project-main\GUI\Senior Project\obj\Debug\Senior Project.pdb
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\Senior Project.exe.config
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\Senior Project.exe
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\Senior Project.pdb
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\Ab3d.DXEngine.dll
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\HelixToolkit.dll
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\HelixToolkit.Wpf.dll
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Direct3D11.dll
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.dll
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.DXGI.dll
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Mathematics.dll
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\Ab3d.DXEngine.xml
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\HelixToolkit.xml
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\HelixToolkit.Wpf.xml
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.pdb
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Direct3D11.pdb
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Direct3D11.xml
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.DXGI.pdb
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.DXGI.xml
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Mathematics.pdb
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\bin\Debug\SharpDX.Mathematics.xml
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.csprojAssemblyReference.cache
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\UserControl1.baml
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\UserControl1.g.cs
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project_MarkupCompile.cache
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.g.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmFilament.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmGeneral.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmMain.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmMainBody.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmNotes.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmOutput.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmPrint.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmSettings.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmSettingsGeneral.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.frmShortcuts.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior_Project.Properties.Resources.resources
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.csproj.GenerateResource.cache
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.csproj.CoreCompileInputs.cache
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.csproj.CopyComplete
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.exe
+F:\repos\lifeofal\Senior_Project\GUI\Senior Project\obj\Debug\Senior Project.pdb

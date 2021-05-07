@@ -2,7 +2,6 @@
 #include <direct.h>
 #include <string>
 #include <fstream>
-#include <filesystem>
 #include <stdlib.h>
 #include "..\lib\toolpath_gen.cpp"
 #include "..\lib\mesh.cpp"
@@ -27,8 +26,9 @@ void main_slice(char* output_path);
 
 int main(int argc, char* argv[])
 {
-	std::cout << argv[1] << endl;
-	main_slice(argv[1]);
+	// std::cout << argv[1] << endl;
+	std::cout <<"Before Slicing\n";
+	main_slice("F:/");
 	// cout << argv[1] << "\t" << argv[2];
 }
 

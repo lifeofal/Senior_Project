@@ -4,7 +4,9 @@
 #define INF 10000
 
 Layer::Layer()
-{ }
+{
+    is_solid = false;
+}
 
 Layer Layer::copy()
 {

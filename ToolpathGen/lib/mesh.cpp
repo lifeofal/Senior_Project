@@ -3,6 +3,11 @@
 
 using namespace std;
 
+bool isBelow(vector<Triangle>::iterator itr, float currZ)
+{
+    return(itr->maxZHeight() < currZ);
+}
+
 Mesh::Mesh(){
 
 }
@@ -63,18 +68,28 @@ int Mesh::size() {
 void Mesh::trim(float currentZHeight){ // delete all triangles below current z height
     // cout << "in trim" << endl;
     Triangle temp;
-    for(int i = 0; i < data.size(); i++) {
-        // cout << "i currently is: " << i << endl;
-        // cout << "max z height is: " << data[i].maxZHeight() << endl;
-        if(data[i].maxZHeight() < currentZHeight) { 
-            temp = data.back();
-            data.back() = data[i];
-            data[i] = temp;
-            data.erase(data.end());
-            i = -1;
+    vector<Triangle>::iterator itr;
+    for(itr = data.begin(); itr != data.end(); ++itr)
+    {
+        if(itr->maxZHeight() < currentZHeight)
+        {
+            data.erase(itr);
+            --itr;
         }
-    
     }
+    
+    // for(int i = 0; i < data.size(); i++) {
+    //     // cout << "i currently is: " << i << endl;
+    //     // cout << "max z height is: " << data[i].maxZHeight() << endl;
+    //     if(data[i].maxZHeight() < currentZHeight) { 
+    //         temp = data.back();
+    //         data.back() = data[i];
+    //         data[i] = temp;
+    //         data.erase(data.end());
+    //         i = -1;
+    //     }
+    
+    // }
 }
 
 void Mesh::printMesh() {
