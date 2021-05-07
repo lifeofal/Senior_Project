@@ -1,0 +1,13 @@
+﻿  ToolpathGen.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+F:\repos\lifeofal\Senior_Project\ToolpathGen\lib\layer.cpp(109,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+F:\repos\lifeofal\Senior_Project\ToolpathGen\lib\toolpath_gen.cpp(107,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\repos\lifeofal\Senior_Project\ToolpathGen\lib\toolpath_gen.cpp(108,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\repos\lifeofal\Senior_Project\ToolpathGen\lib\toolpath_gen.cpp(109,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\repos\lifeofal\Senior_Project\ToolpathGen\lib\mesh.cpp(60,23): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+F:\repos\lifeofal\Senior_Project\ToolpathGen\ToolpathGen\ToolpathGen.cpp(199,18): warning C4305: '=': truncation from 'double' to 'float'
+F:\repos\lifeofal\Senior_Project\ToolpathGen\ToolpathGen\ToolpathGen.cpp(203,18): warning C4305: '=': truncation from 'double' to 'float'
+F:\repos\lifeofal\Senior_Project\ToolpathGen\ToolpathGen\ToolpathGen.cpp(207,18): warning C4305: '=': truncation from 'double' to 'float'
+F:\repos\lifeofal\Senior_Project\ToolpathGen\lib\toolpath_settings.cpp(61): warning C4715: 'Settings::f_get_setting': not all control paths return a value
+F:\repos\lifeofal\Senior_Project\ToolpathGen\lib\toolpath_settings.cpp(70): warning C4715: 'Settings::s_get_setting': not all control paths return a value
+  ToolpathGen.vcxproj -> F:\repos\lifeofal\Senior_Project\ToolpathGen\x64\Debug\ToolpathGen.exe

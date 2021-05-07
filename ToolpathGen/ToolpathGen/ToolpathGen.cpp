@@ -119,7 +119,7 @@ void main_slice(char* output_path) {
 
 	while (currentZheight < maxZ) {
 		
-		mesh.trim(currentZheight);
+		// mesh.trim(currentZheight);
 
 		cout << "current layer height: " << currentZheight << endl;
 		
