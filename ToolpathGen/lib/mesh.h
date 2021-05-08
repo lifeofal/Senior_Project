@@ -18,7 +18,8 @@ class Mesh {
         void insertTriangle(Triangle a);
 
         Triangle getTrig(int i); //return the top triangle in the vector
-        int size();
+        vector<Triangle>::iterator begin();
+        vector<Triangle>::iterator end();
 
         void trim(float currentZHeight); // delete all triangles below current z height
 

@@ -144,9 +144,11 @@
   <ItemGroup>
     <ClInclude Include="..\lib\layer.h" />
     <ClInclude Include="..\lib\lines.h" />
+    <ClInclude Include="..\lib\mesh.h" />
     <ClInclude Include="..\lib\perimeter.h" />
     <ClInclude Include="..\lib\toolpath_gen.h" />
     <ClInclude Include="..\lib\toolpath_settings.h" />
+    <ClInclude Include="..\lib\triangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

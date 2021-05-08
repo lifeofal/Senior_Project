@@ -24,19 +24,20 @@ float getMaxZ();
 
 void main_slice(char* output_path);
 
-int main(int argc, char* argv[])
-{
-	// std::cout << argv[1] << endl;
-	std::cout <<"Before Slicing\n";
-	main_slice("F:/");
-	// cout << argv[1] << "\t" << argv[2];
-}
+// int main(int argc, char* argv[])
+// {
+// 	// std::cout << argv[1] << endl;
+// 	std::cout <<"Before Slicing\n";
+// 	main_slice("F:/");
+// 	// cout << argv[1] << "\t" << argv[2];
+// }
 
 void main_slice(char* output_path) {
 	// outputPath += '/';
 	cwd = _getcwd(NULL, 0);
 	configDir = "";
 	dataDir = cwd;
+	cout << "Started main_slice\n";
 	for (int i = 0; i < cwd.length() - 28; i++)
 	{
 		if (cwd[i] == '\\')
@@ -45,10 +46,15 @@ void main_slice(char* output_path) {
 		}
 		configDir += cwd[i];
 	}
+	cout << "Finished cwd conversion of \\ to /\n";
 	configDir += "ToolpathGen\\resource\\config.ini";
 	dataDir += "\\ModelData.txt";
-	//cout << configDir << endl;
-	//cout << dataDir << endl;
+	cout << configDir << endl;
+	cout << dataDir << endl;
+
+	configDir = "F:/repos/lifeofal/Senior_Project/ToolpathGen/resource/config.ini";
+
+	dataDir = "F:/repos/lifeofal/Senior_Project/ToolpathGen/ToolpathGen/ModelData.txt";
 
 	float maxZ = getMaxZ();
 
@@ -71,6 +77,8 @@ void main_slice(char* output_path) {
 	Layer layer;
 
 	Mesh mesh;
+
+	cout<<dataDir<<endl;
 
 	TrigData.open(dataDir, ios::in);
 		while (!TrigData.eof()) {
@@ -123,9 +131,11 @@ void main_slice(char* output_path) {
 
 		cout << "current layer height: " << currentZheight << endl;
 		
+		vector<Triangle>::iterator itr;
 		//cout << "currentz: " << currentZheight << "\t" << maxZ << "\t" << zIncrementer << endl;
-		for(int i = 0; i < mesh.size(); i++) {
-			Triangle checkSlice = mesh.getTrig(i);
+		for(itr = mesh.begin(); itr != mesh.end(); ++itr) 
+		{
+			Triangle checkSlice = itr->copy();
 			Point *points = checkSlice.getPoints();
 			Point norm = checkSlice.getNorm();
 			// cout<<"Needs slice: "<<needsSlicing(point1z, point2z, point3z, currentZheight)<<"\tNot Flat: "<<notFlat(_vx, _vy, _vz)<<endl;
@@ -143,7 +153,7 @@ void main_slice(char* output_path) {
 		//here is where the sort will need to be called on the lines vector. It will output a layer.
 		my_lines.showV();
 		layer = my_lines.sort();
-		// cout<<"Got here finally"<<endl;
+		cout<<"Got here finally"<<endl;
 		layer.insertZ(currentZheight);
 		makesGCode.print_XYE(layer);
 

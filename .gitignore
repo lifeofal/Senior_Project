@@ -1,3 +1,4 @@
 *.vs/
 *.vscode/
 */ToolpathGen/ToolpathGen.exe
+*/sandbox.exe

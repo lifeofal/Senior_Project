@@ -61,8 +61,14 @@ Triangle Mesh::getTrig(int i){ //return the triangle at the specified index with
     return data[i];
 } 
 
-int Mesh::size() {
-    return data.size();
+vector<Triangle>::iterator Mesh::begin()
+{
+    return data.begin();
+}
+
+vector<Triangle>::iterator Mesh::end()
+{
+    return data.end();
 }
 
 void Mesh::trim(float currentZHeight){ // delete all triangles below current z height
